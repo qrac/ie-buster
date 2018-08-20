@@ -1,0 +1,12 @@
+{
+  "name": "ie-buster",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "repository": "https://github.com/qrac/ie-buster",
+  "author": "Qrac <qrac.jp@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^4.16.5",
+    "webpack-cli": "^3.1.0"
+  }
+}
