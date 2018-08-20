@@ -1,3 +1,5 @@
+import "./style.scss"
+
 function ieBusterFuncCheck() {
   let userAgent = window.navigator.userAgent.toLowerCase()
   if (userAgent.indexOf("msie") !== -1 || userAgent.indexOf("trident") !== -1) {
