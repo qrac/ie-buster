@@ -1,9 +1,9 @@
 {
   "name": "ie-buster",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "dist/index.js",
   "repository": "https://github.com/qrac/ie-buster",
-  "author": "Qrac <qrac.jp@gmail.com>",
+  "author": "Qrac",
   "license": "MIT",
   "scripts": {
     "dev": "webpack --mode development --watch",
