@@ -2,7 +2,6 @@ const path = require("path")
 const webpack = require("webpack")
 const package = require("./package.json")
 const MODE = "development"
-const enabledSourceMap = MODE === "development"
 
 module.exports = {
   mode: MODE,
