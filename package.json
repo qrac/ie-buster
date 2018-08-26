@@ -6,7 +6,7 @@
     "banner": true
   },
   "name": "ie-buster",
-  "description": "Natural Chrome link popup for IE.",
+  "description": "Save web creators with Chrome link popup for IE.",
   "version": "0.1.0",
   "main": "dist/ie-buster.js",
   "license": "MIT",
