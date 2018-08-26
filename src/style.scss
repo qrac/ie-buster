@@ -19,6 +19,7 @@
 
 .ie-buster-alert-note {
   flex: 1 0 0%;
+  margin-right: 12px;
   color: #000;
   font-size: 14px;
   font-weight: 400;
@@ -29,7 +30,6 @@
   flex: none;
   display: inline-block;
   height: 36px;
-  margin-left: 12px;
   min-width: 80px;
   padding: 0 16px;
   background-color: rgb(0, 120, 212);

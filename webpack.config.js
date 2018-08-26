@@ -1,6 +1,6 @@
 const path = require("path")
 const webpack = require("webpack")
-const pjson = require("./package.json")
+const package = require("./package.json")
 const MODE = "development"
 const enabledSourceMap = MODE === "development"
 
@@ -44,12 +44,6 @@ module.exports = {
               sourceMap: true,
               plugins: [
                 require("autoprefixer")({
-                  browsers: [
-                    "> 3% in JP",
-                    "ie 11",
-                    "android 4.4",
-                    "last 1 versions"
-                  ],
                   grid: true
                 })
               ]
@@ -67,9 +61,9 @@ module.exports = {
   },
   plugins: [
     new webpack.BannerPlugin({
-      banner: `${pjson.name} v${pjson.version} ${pjson.license} by ${
-        pjson.author
-      }`
+      banner: `${package.project.name} v${package.version} ${
+        package.license
+      } by ${package.author.name}`
     })
   ]
 }

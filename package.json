@@ -1,14 +1,42 @@
 {
+  "project": {
+    "name": "IE Buster",
+    "dist": "dist",
+    "src": "src",
+    "banner": true
+  },
   "name": "ie-buster",
-  "version": "0.0.2",
+  "description": "Natural Chrome link popup for IE.",
+  "version": "0.1.0",
   "main": "dist/ie-buster.js",
-  "repository": "https://github.com/qrac/ie-buster",
-  "author": "Qrac",
   "license": "MIT",
+  "homepage": "https://github.com/qrac/ie-buster#readme",
+  "repository": "https://github.com/qrac/ie-buster",
+  "bugs": "https://github.com/qrac/ie-buster/issues",
+  "keywords": [
+    "javascript",
+    "ie",
+    "ie10",
+    "ie11",
+    "webpack",
+    "japanese"
+  ],
+  "author": {
+    "name": "Qrac",
+    "url": "https://qrac.jp"
+  },
+  "organization": {
+    "name": "QRANOKO",
+    "url": "https://qranoko.jp"
+  },
   "scripts": {
     "dev": "webpack --mode development --watch",
     "build": "webpack --mode production"
   },
+  "browserslist": [
+    "ie 10",
+    "ie 11"
+  ],
   "devDependencies": {
     "autoprefixer": "^9.1.2",
     "babel-core": "^6.26.3",
