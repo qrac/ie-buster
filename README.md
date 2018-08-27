@@ -1,5 +1,11 @@
 # IE Buster
 
+## Demo
+
+https://codepen.io/qrac/full/gdPNXN/
+
+`Change View` > `Open on CrossBrowserTesting →` から IE 表示をテストできます。
+
 ## About
 
 ![IE Buster Image](https://i.gyazo.com/29f848ce07303cc0bf84348faaf43931.png)
@@ -13,12 +19,6 @@ IE Buster（アイイーバスター）は、IE ユーザーに Chrome を促す
 閉じるボタンはありません。推奨環境でないブラウザで閲覧を続けられては困るからです。真っ当な提案を、できるだけ礼儀正しく IE ユーザーに届けます。
 
 ネーミング程の破壊力は無いかもしれませんが、IE Buster が Web 制作者を救う一手になれば幸いです。
-
-## Demo
-
-[Demo Page](https://codepen.io/qrac/full/gdPNXN/)
-
-`Change View` > `Open on CrossBrowserTesting →` から IE での表示をテストできます。
 
 ## Use
 
