@@ -7,8 +7,8 @@
   },
   "name": "ie-buster",
   "description": "Save web creators with Chrome link popup for IE.",
-  "version": "0.1.0",
-  "main": "dist/ie-buster.js",
+  "version": "0.2.0",
+  "main": "dist/ie-buster.min.js",
   "license": "MIT",
   "homepage": "https://github.com/qrac/ie-buster#readme",
   "repository": "https://github.com/qrac/ie-buster",
@@ -16,6 +16,8 @@
   "keywords": [
     "javascript",
     "ie",
+    "ie8",
+    "ie9",
     "ie10",
     "ie11",
     "webpack",
@@ -30,24 +32,23 @@
     "url": "https://qranoko.jp"
   },
   "scripts": {
-    "dev": "webpack --mode development --watch",
-    "build": "webpack --mode production"
+    "dev": "gulp",
+    "build": "gulp build"
   },
   "browserslist": [
+    "ie 8",
+    "ie 9",
     "ie 10",
     "ie 11"
   ],
   "devDependencies": {
-    "autoprefixer": "^9.1.2",
-    "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.5",
-    "babel-preset-env": "^1.7.0",
-    "css-loader": "^1.0.0",
-    "node-sass": "^4.9.3",
-    "postcss-loader": "^3.0.0",
-    "sass-loader": "^7.1.0",
-    "style-loader": "^0.22.1",
-    "webpack": "^4.16.5",
-    "webpack-cli": "^3.1.0"
+    "gulp": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-header": "^2.0.5",
+    "gulp-if": "^2.0.2",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-uglify": "^3.0.1"
   }
 }
