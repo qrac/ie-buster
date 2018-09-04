@@ -10,7 +10,7 @@ https://codepen.io/qrac/full/gdPNXN/
 
 ![IE Buster Image](https://i.gyazo.com/29f848ce07303cc0bf84348faaf43931.png)
 
-IE Buster（アイイーバスター）は、IE ユーザーに Chrome を促す 1KB のポップアップ JS です。Web 制作者みんなを救うために開発しました。
+IE Buster（アイイーバスター）は、IE ユーザーに Chrome を促す 1.5KB のポップアップ JS です。Web 制作者みんなを救うために開発しました。
 
 多くの場合、IE ユーザーはブラウザの種類を認識していません。IE を強烈に否定しても「IE？なんのこっちゃ？」と暖簾に腕押し状態となってしまうので、もっと自然な移行シーンを増やそうと考えました。そこで、開発したのが IE Buster です。
 
