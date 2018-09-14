@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title><%= site.title %></title>
+    <meta name="description" content="<%= site.desc %>">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no, email=no, address=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta property="og:title" content="<%= site.title %>">
+    <meta property="og:description" content="<%= site.desc %>">
+    <meta property="og:url" content="<%= site.url %>/<%= url %>">
+    <meta property="og:image" content="<%= site.url %>/<%= path.img %>/<%= ogimg %>">
+    <meta property="og:site_name" content="<%= site.title %>">
+    <meta property="og:type" content="<%= ogtype %>">
+    <meta name="twitter:card" content="<%= twcard %>">
+    <meta name="twitter:creator" content="@<%= social.twitter.id %>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.0.0/dist/css/yakuhanrp_s.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:100,300,400,500,700,800,900&amp;subset=japanese">
+    <link rel="stylesheet" href="<%= climb %><%= path.css %>/style.min.css">
+    <link rel="apple-touch-icon" href="<%= climb %><%= path.img %>/apple-touch-icon.png">
+    <link rel="icon" href="<%= climb %><%= path.img %>/favicon.png">
+  </head>
+  <body>
+
+    <header class="section is-header">
+      <div class="inner is-space">
+        <div class="logo-illustration is-centering">
+          <img src="<%= climb %><%= path.img %>/logo-illustration.svg" alt="<%= site.title %> Logo Illustration">
+        </div>
+        <h1 class="logo is-centering">
+          <img src="<%= climb %><%= path.img %>/logo.svg" alt="<%= site.title %> Logo">
+        </h1>
+        <h2 class="heading is-strong is-center is-sm"><%= description %></h2>
+        <p class="text is-center">
+          <span class="text is-strong">v<%= version %></span>
+        </p>
+        <p class="text is-center">
+          <svg class="icon is-lg" role="img">
+            <title>github</title>
+            <use xlink:href="<%= climb %><%= path.img %>/sprite.svg#github"></use>
+          </svg>
+          <a class="text is-link-reverse is-primary" href="<%= repository %>">
+            <span class="text">Repository</span>
+          </a>
+          <span class="text">/</span>
+          <a class="text is-link-reverse is-primary" href="<%= repository %>/releases">
+            <span class="text">Releases</span>
+          </a>
+          <div class="btns is-center is-lg">
+            <a href="/ie-buster.min.js" download="ie-buster.min.js" class="btn is-outline is-primary is-round">
+              <svg class="icon is-lg" role="img">
+                <title>download</title>
+                <use xlink:href="<%= climb %><%= path.img %>/sprite.svg#download"></use>
+              </svg>
+              <span class="text">Download</span>
+            </a>
+          </div>
+        </p>
+      </div>
+    </header>
+
+    <main class="section is-main">
+      <div class="inner is-space">
+        <h3 class="heading is-center is-strong is-mobile-xl is-tablet-xxl">About</h3>
+        <div class="box is-content is-centering is-space">
+          <div class="img-wrap is-centering">
+            <img src="https://i.gyazo.com/29f848ce07303cc0bf84348faaf43931.png" alt="<%= site.title %> About Image">
+          </div>
+          <p class="texts">IE Buster（アイイーバスター）は、IE ユーザーに Chrome を促す 1.5KB のポップアップ JS です。Web 制作者みんなを救うために開発しました。</p>
+        </div>
+        <div class="img-wrap is-centering">
+          <img src="<%= climb %><%= path.img %>/hero.svg" alt="<%= site.title %> Hero Image">
+        </div>
+        <h3 class="heading is-center is-strong is-mobile-xl is-tablet-xxl">Use</h3>
+        <div class="box is-content is-centering is-space">
+        </div>
+      </div>
+    </main>
+
+    <footer class="section is-footer">
+      <div class="inner">
+      </div>
+    </footer>
+
+    <script src="/ie-buster.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/svg4everybody@2.1.9/dist/svg4everybody.min.js"></script>
+    <script>svg4everybody();</script>
+  </body>
+</html>

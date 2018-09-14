@@ -1,0 +1,34 @@
+#-----------------------------------------------------
+# Config
+#-----------------------------------------------------
+
+site:
+  title: IE Buster
+  desc: IE ユーザーに Chrome を促す 1.5KB のポップアップ JS です。Web 制作者みんなを救うために開発しました。
+  url: https://ie-buster.qranoko.jp
+
+pages:
+  index:
+    id: index
+    layout: index
+    url: index.html
+    climb: /
+    ogimg: ogp.png
+    ogtype: website
+    twcard: summary_large_image
+
+path:
+  img: assets/img
+  font: assets/font
+  css: assets/css
+  js: assets/js
+
+social:
+  twitter:
+    class: twitter
+    id: Qrac_JP
+    url: https://twitter.com
+  github:
+    class: github
+    id: qrac
+    url: https://github.com

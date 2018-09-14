@@ -1,5 +1,19 @@
+#-----------------------------------------------------
+# Git Ignore
+#-----------------------------------------------------
+
+# Invisible file
 .DS_Store
 Thumbs.db
-db.json
+
+# Logs
 *.log
-node_modules/
+
+# Dependency directory
+node_modules
+
+# Temporary
+.nuxt
+
+# Distribution
+#dist
