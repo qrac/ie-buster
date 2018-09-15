@@ -1,3 +1,12 @@
+<%#
+//----------------------------------------------------
+// Index
+//----------------------------------------------------
+%>
+<%
+  dateNow = Date.now();
+  dateNowYear = new Date().getFullYear()
+%>
 <!DOCTYPE html>
 <html lang="ja">
   <head>
@@ -17,13 +26,13 @@
     <meta name="twitter:creator" content="@<%= social.twitter.id %>">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.0.0/dist/css/yakuhanrp_s.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:100,300,400,500,700,800,900&amp;subset=japanese">
-    <link rel="stylesheet" href="<%= climb %><%= path.css %>/style.min.css">
+    <link rel="stylesheet" href="<%= climb %><%= path.css %>/project.min.css">
     <link rel="apple-touch-icon" href="<%= climb %><%= path.img %>/apple-touch-icon.png">
     <link rel="icon" href="<%= climb %><%= path.img %>/favicon.png">
   </head>
   <body>
 
-    <header class="section is-header">
+    <header class="section is-header" id="header">
       <div class="inner">
         <div class="logo-illustration is-centering">
           <img src="<%= climb %><%= path.img %>/logo-illustration.svg" alt="<%= site.title %> Logo Illustration">
@@ -63,33 +72,190 @@
     </header>
 
     <main class="section is-main">
-      <section class="section is-content is-about">
+
+      <section class="section is-content is-about" id="about">
         <div class="inner is-space">
           <h3 class="heading is-center is-strong is-mobile-xl is-tablet-xxl">About</h3>
-          <div class="box is-content is-centering is-space">
-            <div class="img-wrap is-centering">
+          <div class="card is-width-sm is-centering">
+            <div class="inner is-space">
               <a href="<%= climb %><%= path.img %>/about.png">
-                <img src="<%= climb %><%= path.img %>/about.png" alt="<%= site.title %> About Image">
+                <img class="img is-about" src="<%= climb %><%= path.img %>/about.png" alt="<%= site.title %> About Image">
               </a>
+              <p class="texts">
+                <span class="text">IE Buster（アイイーバスター）は、IE ユーザーに Chrome を促す 1.5KB のポップアップ JS です。Web 制作者みんなを救うために開発しました。</span>
+                <span class="text">
+                  <span class="text">（</span>
+                  <a class="text is-link-reverse is-primary" href="<%= repository %>#about">→ 詳細</a>
+                  <span class="text">）</span>
+                </span>
+              </p>
             </div>
-            <p class="texts">IE Buster（アイイーバスター）は、IE ユーザーに Chrome を促す 1.5KB のポップアップ JS です。Web 制作者みんなを救うために開発しました。</p>
-          </div>
-          <div class="img-wrap is-centering">
-            <img src="<%= climb %><%= path.img %>/hero.svg" alt="<%= site.title %> Hero Image">
           </div>
         </div>
       </section>
-      <section class="section is-content is-howtouse">
+
+      <section class="section is-content is-how-to-use" id="how-to-use">
         <div class="inner is-space">
           <h3 class="heading is-center is-strong is-mobile-xl is-tablet-xxl">How To Use</h3>
-          <div class="box is-content is-centering is-space">
+          <div class="card is-width-sm is-centering">
+            <div class="inner is-space">
+              <h4 class="heading is-center is-strong is-mobile-lg is-tablet-xl">
+                <a class="text is-link-reverse is-primary" rel="noopener noreferrer" href="https://www.jsdelivr.com/package/npm/<%= name %>">CDN</a>
+                <svg class="icon is-sm is-dark-6" role="img">
+                  <title>external-link</title>
+                  <use xlink:href="<%= climb %><%= path.img %>/sprite.svg#external-link"></use>
+                </svg>
+              </h4>
+              <pre class="pre"><code class="code"><%= '<script src="https://cdn.jsdelivr.net/npm/ie-buster@' %><%= version %><%= '/dist/ie-buster.min.js"></script>' %></code></pre>
+              <p class="texts is-center">
+                <span class="text">HTML 内に CDN のリンクを貼るだけで、ポップアップを表示できます。</span>
+              </p>
+            </div>
+          </div>
+          <div class="card is-width-sm is-centering">
+            <div class="inner is-space">
+              <h4 class="heading is-center is-strong is-mobile-lg is-tablet-xl">
+                <a class="text is-link-reverse is-primary" rel="noopener noreferrer" href="https://www.npmjs.com/package/<%= name %>">npm</a>
+                <svg class="icon is-sm is-dark-6" role="img">
+                  <title>external-link</title>
+                  <use xlink:href="<%= climb %><%= path.img %>/sprite.svg#external-link"></use>
+                </svg>
+              </h4>
+              <pre class="pre"><code class="code"><%= '$ npm i -D ' %><%= name %></code></pre>
+              <p class="texts is-center">
+                <code class="code">npm install</code>
+                <span class="text">も利用可能です。</span>
+              </p>
+            </div>
+          </div>
+          <img class="img is-hero" src="<%= climb %><%= path.img %>/hero.svg" alt="<%= site.title %> Hero Image">
+        </div>
+      </section>
+
+      <section class="section is-content is-quick-test" id="quick-test">
+        <div class="inner is-space">
+          <h3 class="heading is-center is-strong is-mobile-xl is-tablet-xxl">Quick Test</h3>
+          <div class="card is-width-sm is-centering">
+            <div class="inner is-space">
+              <h4 class="heading is-center is-strong is-mobile-lg is-tablet-xl">
+                <a class="text is-link-reverse is-primary" rel="noopener noreferrer" target="_blank" href="https://codepen.io/qrac/full/gdPNXN/">CodePen</a>
+                <svg class="icon is-sm is-dark-6" role="img">
+                  <title>external-link</title>
+                  <use xlink:href="<%= climb %><%= path.img %>/sprite.svg#external-link"></use>
+                </svg>
+              </h4>
+              <p class="texts is-center">
+                <code class="code">Change View</code>
+                <span class="text">→</span>
+                <code class="code">Open on CrossBrowserTesting</code>
+                <span class="text">から IE 表示をテストできます。</span>
+              </p>
+            </div>
           </div>
         </div>
       </section>
+
+      <section class="section is-content is-support" id="support">
+        <div class="inner is-space">
+          <h3 class="heading is-center is-strong is-mobile-xl is-tablet-xxl">Support</h3>
+          <div class="card is-width-sm is-centering">
+            <div class="inner is-space">
+              <div class="table-wrap is-scroll-x">
+                <table class="table is-border is-center">
+                  <thead>
+                    <tr class="box is-paint">
+                      <td colspan="4">
+                        <svg class="icon is-lg" role="img">
+                          <title>ie</title>
+                          <use xlink:href="<%= climb %><%= path.img %>/sprite.svg#ie"></use>
+                        </svg>
+                        <span class="text is-strong">Internet Explorer</span>
+                      </td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>IE 8</td>
+                      <td>IE 9</td>
+                      <td>IE 10</td>
+                      <td>IE 11</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <img class="img is-grave is-centering" src="<%= climb %><%= path.img %>/grave.svg" alt="<%= site.title %> Grave Image">
+          </div>
+        </div>
+      </section>
+
+      <section class="section is-content is-license" id="license">
+        <div class="inner is-space">
+          <h3 class="heading is-center is-strong is-mobile-xl is-tablet-xxl">License & Credit</h3>
+          <div class="card is-width-sm is-centering">
+            <div class="inner is-space">
+              <p class="texts is-center">
+                <span class="text is-inline-block">
+                  <span class="text">License:</span>
+                  <span class="text"><%= license %></span>
+                </span>
+                <span class="text is-dark-7">
+                  <svg class="icon is-lg" role="img">
+                    <title>dot</title>
+                    <use xlink:href="<%= climb %><%= path.img %>/sprite.svg#dot"></use>
+                  </svg>
+                </span>
+                <span class="text is-inline-block">
+                  <span class="text">Author:</span>
+                  <a href="<%= author.url %>" rel="noopener noreferrer" target="_blank" class="text is-link-reverse is-primary"><%= author.name %></a>
+                  <svg class="icon is-sm is-dark-6" role="img">
+                    <title>external-link</title>
+                    <use xlink:href="<%= climb %><%= path.img %>/sprite.svg#external-link"></use>
+                  </svg>
+                </span>
+                <span class="text is-dark-7">
+                  <svg class="icon is-lg" role="img">
+                    <title>dot</title>
+                    <use xlink:href="<%= climb %><%= path.img %>/sprite.svg#dot"></use>
+                  </svg>
+                </span>
+                <span class="text is-inline-block">
+                  <span class="text">Illustration:</span>
+                  <a href="<%= illustration.url %>" rel="noopener noreferrer" target="_blank" class="text is-link-reverse is-primary"><%= illustration.name %></a>
+                  <svg class="icon is-sm is-dark-6" role="img">
+                    <title>external-link</title>
+                    <use xlink:href="<%= climb %><%= path.img %>/sprite.svg#external-link"></use>
+                  </svg>
+                </span>
+                <span class="text is-dark-7">
+                  <svg class="icon is-lg" role="img">
+                    <title>dot</title>
+                    <use xlink:href="<%= climb %><%= path.img %>/sprite.svg#dot"></use>
+                  </svg>
+                </span>
+                <span class="text is-inline-block">
+                  <span class="text">Organization:</span>
+                  <a href="<%= organization.url %>" rel="noopener noreferrer" target="_blank" class="text is-link-reverse is-primary"><%= organization.name %></a>
+                  <svg class="icon is-sm is-dark-6" role="img">
+                    <title>external-link</title>
+                    <use xlink:href="<%= climb %><%= path.img %>/sprite.svg#external-link"></use>
+                  </svg>
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </main>
 
-    <footer class="section is-footer">
-      <div class="inner">
+    <footer class="section is-footer" id="footer">
+      <div class="inner is-space">
+        <p class="texts is-center">
+          <span class="text">©</span>
+          <a href="<%= organization.url %>" rel="noopener noreferrer" target="_blank" class="text is-link-reverse"><%= organization.name %></a>
+          <span class="text"><%= dateNowYear %></span>
+        </p>
       </div>
     </footer>
 

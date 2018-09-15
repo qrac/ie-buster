@@ -26,6 +26,10 @@
     "name": "Qrac",
     "url": "https://qrac.jp"
   },
+  "illustration": {
+    "name": "Mainoko",
+    "url": "https://twitter.com/CreamyMainoko"
+  },
   "organization": {
     "name": "QRANOKO",
     "url": "https://qranoko.jp"
@@ -57,6 +61,7 @@
     "gulp-postcss": "^8.0.0",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.1",
+    "gulp-sass-glob": "^1.0.9",
     "gulp-svg-sprite": "^1.4.0",
     "gulp-uglify": "^3.0.1",
     "moftone": "^6.2.0",

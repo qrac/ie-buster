@@ -15,6 +15,7 @@ const ejs = require("gulp-ejs")
 const data = require("gulp-data")
 const yaml = require("js-yaml")
 const sass = require("gulp-sass")
+const sassGlob = require("gulp-sass-glob")
 const postcss = require("gulp-postcss")
 const autoprefixer = require("autoprefixer")
 const flexBugsFixes = require("postcss-flexbugs-fixes")
@@ -137,6 +138,7 @@ gulp.task("ejs", function(done) {
 gulp.task("scss", () => {
   return gulp
     .src(paths.src.scss + "**/*.scss")
+    .pipe(sassGlob())
     .pipe(
       plumber({ errorHandler: notify.onError("Error: <%= error.message %>") })
     )

@@ -1,5 +1,5 @@
 //----------------------------------------------------
-// Stylesheet
+// Project Stylesheet
 //----------------------------------------------------
 
 //----------------------------------------------------
@@ -8,7 +8,7 @@
 
 // Project Variable
 $project-color-red: #db4437;
-$project-color-blue: #1ebbee;
+$project-color-blue: #05b4ee;
 $project-color-green: #0f9d58;
 $project-color-yellow: #ffcd40;
 $project-color-orange: #ff9800;
@@ -17,6 +17,7 @@ $project-header-height: 56px;
 $project-header-height-mobile: 56px;
 $project-header-height-desktop: 64px;
 $project-header-height-wide: 72px;
+$project-border-color: rgba($project-color-grey, 0.6);
 $project-border-radius: 3.75px;
 
 // MUSUBii Override Variable
@@ -25,6 +26,8 @@ $primary: $project-color-blue;
 //$font-serif: YakuHanMPs, "Noto Serif JP", Meiryo, serif;
 $font-sans: YakuHanRPs, "M PLUS Rounded 1c", Meiryo, sans-serif;
 //$btn-border-radius: $project-border-radius;
+$table-border-color: $project-border-color;
+$table-paint-background-color: $project-color-blue;
 //$input-border-radius: $project-border-radius;
 
 // Brand Variable
@@ -69,76 +72,4 @@ $brand-color-rss: #f26522;
 // / Project
 //----------------------------------------------------
 
-.section.is-header {
-  padding: 7.5vh 0;
-  > .inner {
-    display: grid;
-    grid-gap: 1em;
-  }
-}
-
-.logo-illustration {
-  display: block;
-  width: 60vw;
-  max-width: 300px;
-}
-
-.logo {
-  display: block;
-  width: 80vw;
-  max-width: 500px;
-}
-
-.ribbon-desc {
-  display: block;
-  width: 80vw;
-  max-width: 500px;
-  padding: 0.375em 1em;
-  background-color: $project-color-grey;
-  border-radius: $project-border-radius;
-  color: $light;
-  font-weight: 700;
-}
-
-.icon {
-  width: 1em;
-  height: 1em;
-}
-
-:not(.btn) > .icon {
-  position: relative;
-  top: -0.1em;
-  + .text {
-    margin-left: 0;
-  }
-}
-
-.box.is-content {
-  max-width: 820px;
-  padding: 1em;
-  border: 1px solid rgba($project-color-grey, 0.6);
-  border-radius: $project-border-radius;
-  @include tablet {
-    padding: 2em;
-  }
-}
-
-@each $space-x in 2, 3, 4, 5, 6 {
-  .is-space-#{$space-x}x {
-    > *:not(:first-child) {
-      margin-top: $space-x + em;
-    }
-  }
-}
-
-.is-space-quarter {
-  > *:not(:first-child) {
-    margin-top: 0.25em;
-  }
-}
-
-.is-space-half {
-  > *:not(:first-child) {
-    margin-top: 0.5em;
-  }
-}
+@import "project/**";

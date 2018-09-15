@@ -1,14 +1,14 @@
 # IE Buster
 
-## Demo
+## Quick Test
 
 https://codepen.io/qrac/full/gdPNXN/
 
-`Change View` > `Open on CrossBrowserTesting →` から IE 表示をテストできます。
+`Change View` → `Open on CrossBrowserTesting` から IE 表示をテストできます。
 
 ## About
 
-![IE Buster Image](https://i.gyazo.com/29f848ce07303cc0bf84348faaf43931.png)
+![IE Buster Image](https://i.gyazo.com/a8e2283b557bda08820bf938b9288546.png)
 
 IE Buster（アイイーバスター）は、IE ユーザーに Chrome を促す 1.5KB のポップアップ JS です。Web 制作者みんなを救うために開発しました。
 
