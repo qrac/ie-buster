@@ -48,6 +48,7 @@ const banner = {
 const paths = {
   src: {
     dir: package.project.src + "/",
+    app: package.project.src + "/app/",
     ejs: package.project.src + "/ejs/",
     scss: package.project.src + "/scss/",
     js: package.project.src + "/js/",
@@ -55,9 +56,10 @@ const paths = {
   },
   dist: {
     dir: package.project.dist + "/",
+    app: package.project.dist + "/",
     html: package.project.dist + "/",
     css: package.project.dist + "/assets/css/",
-    js: package.project.dist + "/",
+    js: package.project.dist + "/assets/js/",
     img: package.project.dist + "/assets/img/"
   }
 }
@@ -96,7 +98,7 @@ const browserSyncOption = {
   server: {
     baseDir: paths.dist.html
   },
-  startPath: "./index.html",
+  startPath: "index.html",
   open: false,
   notify: false
 }
@@ -104,6 +106,21 @@ const browserSyncOption = {
 //----------------------------------------------------
 // gulp: Task
 //----------------------------------------------------
+
+// Application Wrapping
+gulp.task("app", () => {
+  return gulp
+    .src(paths.src.app + "**/*.js")
+    .pipe(
+      plumber({ errorHandler: notify.onError("Error: <%= error.message %>") })
+    )
+    .pipe(concat(package.name + ".js"))
+    .pipe(gulpif(banner.visible, header(banner.basic, { package: package })))
+    .pipe(gulp.dest(paths.dist.app))
+    .pipe(uglify(uglifyOption))
+    .pipe(rename({ suffix: ".min" }))
+    .pipe(gulp.dest(paths.dist.app))
+})
 
 // EJS > HTML
 gulp.task("ejs", function(done) {
@@ -159,30 +176,6 @@ gulp.task("cssmin", () => {
     .pipe(cleanCSS())
     .pipe(rename({ suffix: ".min" }))
     .pipe(gulp.dest(paths.dist.css))
-})
-
-// Concat
-gulp.task("concat", () => {
-  return gulp
-    .src(paths.src.js + "**/*.js")
-    .pipe(
-      plumber({ errorHandler: notify.onError("Error: <%= error.message %>") })
-    )
-    .pipe(concat("ie-buster.js"))
-    .pipe(gulpif(banner.visible, header(banner.basic, { package: package })))
-    .pipe(gulp.dest(paths.dist.js))
-})
-
-// Uglify
-gulp.task("uglify", () => {
-  return gulp
-    .src([paths.dist.js + "**/*.js", "!" + paths.dist.js + "**/*.min.js"])
-    .pipe(
-      plumber({ errorHandler: notify.onError("Error: <%= error.message %>") })
-    )
-    .pipe(uglify(uglifyOption))
-    .pipe(rename({ suffix: ".min" }))
-    .pipe(gulp.dest(paths.dist.js))
 })
 
 // SVG Sprite Icon
@@ -243,10 +236,7 @@ gulp.task("watch", () => {
     paths.src.scss + "**/*.scss",
     gulp.series("scss", "cssmin", "reload")
   )
-  gulp.watch(
-    paths.src.js + "**/*.js",
-    gulp.series("concat", "uglify", "reload")
-  )
+  gulp.watch(paths.src.app + "**/*.js", gulp.series("app", "reload"))
   gulp.watch(paths.src.icon + "**/*.svg", gulp.series("sprite", "reload"))
 })
 
@@ -259,8 +249,8 @@ gulp.task("default", gulp.parallel("browser-sync", "watch"))
 gulp.task(
   "build",
   gulp.parallel(
+    gulp.series("app"),
     gulp.series("ejs"),
-    gulp.series("scss", "cssmin"),
-    gulp.series("concat", "uglify")
+    gulp.series("scss", "cssmin")
   )
 )

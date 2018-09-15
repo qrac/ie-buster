@@ -1,4 +1,4 @@
-/*! IE Buster v0.2.1 MIT by Qrac */
+/*! IE Buster v1.0.0 MIT by Qrac */
 
 function ieBusterUserAgentCheck() {
   var ieBusterUserAgent = window.navigator.userAgent.toLowerCase()
