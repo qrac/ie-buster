@@ -54,4 +54,5 @@ $ npm i -D ie-buster
 ## Credit
 
 - Author: [Qrac](https://qrac.jp)
+- Illustration: [Mainoko](https://twitter.com/CreamyMainoko)
 - Organization: [QRANOKO](https://qranoko.jp)
