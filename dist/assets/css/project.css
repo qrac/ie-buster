@@ -375,18 +375,18 @@ iframe {
 
 :not(.pre) > .code {
   padding: 0.2em 0.5em;
-  background-color: whitesmoke;
+  background-color: #334750;
   border-radius: 0.1875em;
-  color: #646d9f;
+  color: #fff;
   font-size: 0.875em;
   font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", Meiryo, monospace, serif;
   word-break: break-all;
 }
 
 .pre {
-  background-color: whitesmoke;
+  background-color: #334750;
   border-radius: 0.125em;
-  color: #646d9f;
+  color: #fff;
   font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", Meiryo, monospace, serif;
   white-space: pre;
   word-wrap: normal;
@@ -888,7 +888,7 @@ iframe {
 .table tr.is-paint,
 .table th.is-paint,
 .table td.is-paint {
-  background-color: #05b4ee;
+  background-color: #334750;
   color: #ffffff;
 }
 
@@ -1463,11 +1463,6 @@ iframe {
 
 .is-space-half > *:not(:first-child) {
   margin-top: 0.5em;
-}
-
-.pre {
-  background-color: #334750;
-  color: #ffffff;
 }
 
 @media screen and (min-width: 576px) {
