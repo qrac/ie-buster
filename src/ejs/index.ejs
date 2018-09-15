@@ -24,18 +24,20 @@
   <body>
 
     <header class="section is-header">
-      <div class="inner is-space">
+      <div class="inner">
         <div class="logo-illustration is-centering">
           <img src="<%= climb %><%= path.img %>/logo-illustration.svg" alt="<%= site.title %> Logo Illustration">
         </div>
-        <h1 class="logo is-centering">
-          <img src="<%= climb %><%= path.img %>/logo.svg" alt="<%= site.title %> Logo">
-        </h1>
-        <h2 class="heading is-strong is-center is-sm"><%= description %></h2>
-        <p class="text is-center">
+        <div class="logo-set is-space-half">
+          <h1 class="logo is-centering">
+            <img src="<%= climb %><%= path.img %>/logo.svg" alt="<%= site.title %> Logo">
+          </h1>
+          <h2 class="ribbon-desc is-center is-centering"><%= site.desc_short %></h2>
+        </div>
+        <p class="text is-center is-lg">
           <span class="text is-strong">v<%= version %></span>
         </p>
-        <p class="text is-center">
+        <p class="text is-center is-lg">
           <svg class="icon is-lg" role="img">
             <title>github</title>
             <use xlink:href="<%= climb %><%= path.img %>/sprite.svg#github"></use>
@@ -47,35 +49,43 @@
           <a class="text is-link-reverse is-primary" href="<%= repository %>/releases">
             <span class="text">Releases</span>
           </a>
-          <div class="btns is-center is-lg">
-            <a href="/ie-buster.min.js" download="ie-buster.min.js" class="btn is-outline is-primary is-round">
-              <svg class="icon is-lg" role="img">
-                <title>download</title>
-                <use xlink:href="<%= climb %><%= path.img %>/sprite.svg#download"></use>
-              </svg>
-              <span class="text">Download</span>
-            </a>
-          </div>
         </p>
+        <div class="btns is-center is-lg">
+          <a href="/ie-buster.min.js" download="ie-buster.min.js" class="btn is-outline is-primary is-round">
+            <svg class="icon is-lg" role="img">
+              <title>download</title>
+              <use xlink:href="<%= climb %><%= path.img %>/sprite.svg#download"></use>
+            </svg>
+            <span class="text">Download</span>
+          </a>
+        </div>
       </div>
     </header>
 
     <main class="section is-main">
-      <div class="inner is-space">
-        <h3 class="heading is-center is-strong is-mobile-xl is-tablet-xxl">About</h3>
-        <div class="box is-content is-centering is-space">
-          <div class="img-wrap is-centering">
-            <img src="https://i.gyazo.com/29f848ce07303cc0bf84348faaf43931.png" alt="<%= site.title %> About Image">
+      <section class="section is-content is-about">
+        <div class="inner is-space">
+          <h3 class="heading is-center is-strong is-mobile-xl is-tablet-xxl">About</h3>
+          <div class="box is-content is-centering is-space">
+            <div class="img-wrap is-centering">
+              <a href="<%= climb %><%= path.img %>/about.png">
+                <img src="<%= climb %><%= path.img %>/about.png" alt="<%= site.title %> About Image">
+              </a>
+            </div>
+            <p class="texts">IE Buster（アイイーバスター）は、IE ユーザーに Chrome を促す 1.5KB のポップアップ JS です。Web 制作者みんなを救うために開発しました。</p>
           </div>
-          <p class="texts">IE Buster（アイイーバスター）は、IE ユーザーに Chrome を促す 1.5KB のポップアップ JS です。Web 制作者みんなを救うために開発しました。</p>
+          <div class="img-wrap is-centering">
+            <img src="<%= climb %><%= path.img %>/hero.svg" alt="<%= site.title %> Hero Image">
+          </div>
         </div>
-        <div class="img-wrap is-centering">
-          <img src="<%= climb %><%= path.img %>/hero.svg" alt="<%= site.title %> Hero Image">
+      </section>
+      <section class="section is-content is-howtouse">
+        <div class="inner is-space">
+          <h3 class="heading is-center is-strong is-mobile-xl is-tablet-xxl">How To Use</h3>
+          <div class="box is-content is-centering is-space">
+          </div>
         </div>
-        <h3 class="heading is-center is-strong is-mobile-xl is-tablet-xxl">Use</h3>
-        <div class="box is-content is-centering is-space">
-        </div>
-      </div>
+      </section>
     </main>
 
     <footer class="section is-footer">
