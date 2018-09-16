@@ -9,6 +9,9 @@
   &.is-width-sm {
     max-width: 820px;
   }
+  &.is-bg-light-blue {
+    background-color: $light-blue-50;
+  }
   > .inner {
     padding: 1em;
     @include tablet {

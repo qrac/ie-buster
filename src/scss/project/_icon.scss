@@ -5,6 +5,9 @@
 .icon {
   width: 1em;
   height: 1em;
+  &.is-lg-400 {
+    font-size: 400%;
+  }
 }
 
 :not(.btn) {
