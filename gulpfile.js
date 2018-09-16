@@ -64,37 +64,37 @@ const paths = {
   }
 }
 
-// HTML Beauty Option
-const htmlbeautifyOption = {
+// HTML Beauty Options
+const htmlbeautifyOptions = {
   indent_size: 2,
   max_preserve_newlines: 0,
   indent_inner_html: true,
   extra_liners: []
 }
 
-// Sass Option
-const sassOption = {
+// Sass Options
+const sassOptions = {
   outputStyle: "expanded",
   importer: packageImporter({
     extensions: [".scss", ".css"]
   })
 }
 
-// Autoprefixer Option
-const autoprefixerOption = {
+// Autoprefixer Options
+const autoprefixerOptions = {
   grid: true
 }
 
-// PostCSS Option
-const postcssOption = [flexBugsFixes, autoprefixer(autoprefixerOption)]
+// PostCSS Options
+const postcssOptions = [flexBugsFixes, autoprefixer(autoprefixerOptions)]
 
-// Uglify Option
-const uglifyOption = {
+// Uglify Options
+const uglifyOptions = {
   output: { comments: /^!/ }
 }
 
-// BrowserSync Option
-const browserSyncOption = {
+// BrowserSync Options
+const browserSyncOptions = {
   server: {
     baseDir: paths.dist.html
   },
@@ -117,7 +117,7 @@ gulp.task("app", () => {
     .pipe(concat(package.name + ".js"))
     .pipe(gulpif(banner.visible, header(banner.basic, { package: package })))
     .pipe(gulp.dest(paths.dist.app))
-    .pipe(uglify(uglifyOption))
+    .pipe(uglify(uglifyOptions))
     .pipe(rename({ suffix: ".min" }))
     .pipe(gulp.dest(paths.dist.app))
 })
@@ -145,7 +145,7 @@ gulp.task("ejs", function(done) {
       )
       .pipe(ejs(page))
       .pipe(rename(key + ".html"))
-      .pipe(htmlbeautify(htmlbeautifyOption))
+      .pipe(htmlbeautify(htmlbeautifyOptions))
       .pipe(gulp.dest(paths.dist.html))
     done()
   }
@@ -159,8 +159,8 @@ gulp.task("scss", () => {
     .pipe(
       plumber({ errorHandler: notify.onError("Error: <%= error.message %>") })
     )
-    .pipe(sass(sassOption))
-    .pipe(postcss(postcssOption))
+    .pipe(sass(sassOptions))
+    .pipe(postcss(postcssOptions))
     .pipe(gcmq())
     .pipe(gulpif(banner.visible, header(banner.basic, { package: package })))
     .pipe(gulp.dest(paths.dist.css))
@@ -217,7 +217,7 @@ gulp.task("sprite", function() {
 
 // Browser Sync
 gulp.task("browser-sync", function(done) {
-  browserSync.init(browserSyncOption)
+  browserSync.init(browserSyncOptions)
   done()
 })
 
