@@ -13,19 +13,14 @@
 
 .paypal-box {
   .is-paypal-box-target-1 {
-    //height: 2.3125em;
     transition: 0.4s ease-in;
     visibility: visible;
     overflow: hidden;
   }
   .is-paypal-box-target-2 {
-    //height: 22em;
     transition: 0.6s ease-in;
     visibility: visible;
     overflow: hidden;
-    @include tablet {
-      //height: 10.75em;
-    }
   }
   .is-paypal-box-trigger:not(:checked) {
     ~ .is-paypal-box-target-2 {

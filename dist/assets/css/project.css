@@ -556,12 +556,12 @@ iframe {
 }
 
 .btn.is-plain.is-primary {
-  background-color: #05b4ee;
+  background-color: #00a6dd;
   color: #ffffff;
 }
 
 .btn.is-plain.is-primary:hover {
-  background-color: #04a1d5;
+  background-color: #0093c4;
 }
 
 .btn.is-plain.is-info {
@@ -618,7 +618,7 @@ iframe {
 }
 
 .btn.is-melt.is-primary {
-  color: #05b4ee;
+  color: #00a6dd;
 }
 
 .btn.is-melt.is-info {
@@ -655,12 +655,12 @@ iframe {
 }
 
 .btn.is-outline.is-primary {
-  border-color: #05b4ee;
-  color: #05b4ee;
+  border-color: #00a6dd;
+  color: #00a6dd;
 }
 
 .btn.is-outline.is-primary:hover {
-  background-color: #05b4ee;
+  background-color: #00a6dd;
   border-color: transparent;
   color: #ffffff;
 }
@@ -729,12 +729,12 @@ iframe {
 }
 
 .btn.is-ghost.is-primary {
-  border-color: #8fe1fd;
-  color: #8fe1fd;
+  border-color: #77ddff;
+  color: #77ddff;
 }
 
 .btn.is-ghost.is-primary:hover {
-  background-color: #05b4ee;
+  background-color: #00a6dd;
   border-color: transparent;
   color: #ffffff;
 }
@@ -1197,7 +1197,7 @@ iframe {
 }
 
 .is-primary:not(.btn) {
-  color: #05b4ee;
+  color: #00a6dd;
 }
 
 .is-info:not(.btn) {
