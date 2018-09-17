@@ -1,5 +1,9 @@
 # IE Buster
 
+## Site
+
+https://ie-buster.qranoko.jp
+
 ## Quick Test
 
 https://codepen.io/qrac/full/gdPNXN/
@@ -25,7 +29,7 @@ IE Buster（アイイーバスター）は、IE ユーザーに Chrome を促す
 ### [CDN](https://www.jsdelivr.com/package/npm/ie-buster)
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/ie-buster@0.2.0/dist/ie-buster.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/ie-buster@1.0.0/dist/ie-buster.min.js"></script>
 ```
 
 ### [npm](https://www.npmjs.com/package/ie-buster)
