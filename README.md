@@ -69,6 +69,10 @@ module.exports = {
 
 Nuxt.js で Web アプリ・サイトを制作している場合は、`nuxt.config.js` で CDN のリンクを読み込ませる方法が簡単です。
 
+### WordPress Plugin
+
+[IE Buster WordPress Plugin](https://github.com/qrac/ie-buster-wp-plugin) として制作中です。
+
 ## Support
 
 - IE 8
