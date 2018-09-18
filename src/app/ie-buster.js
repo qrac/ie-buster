@@ -1,8 +1,10 @@
 function ieBusterUserAgentCheck() {
   var ieBusterUserAgent = window.navigator.userAgent.toLowerCase()
-  return
+  if (
     ~ieBusterUserAgent.indexOf("msie") ||
     ~ieBusterUserAgent.indexOf("trident")
+  )
+    return true
 }
 
 if (ieBusterUserAgentCheck()) {
