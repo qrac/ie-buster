@@ -52,6 +52,23 @@ $ npm i -D ie-buster
 
 Netlify にサイトをデプロイしている場合は、Snippet injection で CDN リンク挿入 → 再デプロイするだけで IE Buster が導入できます。
 
+### Nuxt.js
+
+```js
+module.exports = {
+  head: {
+    script: [
+      {
+        src:
+          "https://cdn.jsdelivr.net/npm/ie-buster@1.0.1/dist/ie-buster.min.js"
+      }
+    ]
+  }
+}
+```
+
+Nuxt.js で Web アプリ・サイトを制作している場合は、`nuxt.config.js` で CDN のリンクを読み込ませる方法が簡単です。
+
 ## Support
 
 - IE 8
