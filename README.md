@@ -24,12 +24,12 @@ IE Buster（アイイーバスター）は、IE ユーザーに Chrome を促す
 
 ネーミング程の破壊力はないかもしれませんが、IE Buster が Web 制作者を救う一手になれば幸いです。
 
-## Use
+## How To Use
 
 ### [CDN](https://www.jsdelivr.com/package/npm/ie-buster)
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/ie-buster@1.0.0/dist/ie-buster.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/ie-buster@1.0.1/dist/ie-buster.min.js"></script>
 ```
 
 ### [npm](https://www.npmjs.com/package/ie-buster)
