@@ -1,12 +1,8 @@
 function ieBusterUserAgentCheck() {
   var ieBusterUserAgent = window.navigator.userAgent.toLowerCase()
-  if (
-    ieBusterUserAgent.indexOf("msie") !== -1 ||
-    ieBusterUserAgent.indexOf("trident") !== -1
-  ) {
-    return true
-  }
-  return false
+  return
+    ~ieBusterUserAgent.indexOf("msie") ||
+    ~ieBusterUserAgent.indexOf("trident")
 }
 
 if (ieBusterUserAgentCheck()) {
