@@ -46,6 +46,12 @@ $ npm i -D ie-buster
 
 `npm install` も利用可能です。
 
+### Netlify
+
+![Netlify Snippet Injection Image](https://i.gyazo.com/ef81f2d9153b817a5a1b851656289d75.png)
+
+Netlify にサイトをデプロイしている場合は、Snippet injection で CDN リンク挿入 → 再デプロイするだけで IE Buster が導入できます。
+
 ## Support
 
 - IE 8
