@@ -1,5 +1,9 @@
 # IE Buster
 
+<p align="center">
+  <img width="230" src="https://i.gyazo.com/a238286ee75bc88afb08abb435192bf1.png" alt="IE Buster Logo Illustration">
+</p>
+
 ## Site
 
 https://ie-buster.qranoko.jp
@@ -32,11 +36,15 @@ IE Buster（アイイーバスター）は、IE ユーザーに Chrome を促す
 <script src="https://cdn.jsdelivr.net/npm/ie-buster@1.0.1/dist/ie-buster.min.js"></script>
 ```
 
+HTML 内に CDN のリンクを貼るだけで、ポップアップを表示できます。
+
 ### [npm](https://www.npmjs.com/package/ie-buster)
 
 ```bash
 $ npm i -D ie-buster
 ```
+
+`npm install` も利用可能です。
 
 ## Support
 
