@@ -71,7 +71,7 @@ Nuxt.js で Web アプリ・サイトを制作している場合は、`nuxt.conf
 
 ### WordPress Plugin
 
-[IE Buster WordPress Plugin](https://github.com/qrac/ie-buster-wp-plugin) として制作中です。
+[WP IE Buster](https://github.com/qrac/wp-ie-buster) として制作中です。
 
 ## Support
 
