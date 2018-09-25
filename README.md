@@ -46,28 +46,19 @@ $ npm i -D ie-buster
 
 `npm install` も利用可能です。
 
+### Vue.js/Nuxt.js
+
+npmでインストールしたあと、 `App.vue` に下記を追記します。
+
+```js
+import 'ie-buster/dist/ie-buster.min.js'
+```
+
 ### Netlify
 
 ![Netlify Snippet Injection Image](https://i.gyazo.com/ef81f2d9153b817a5a1b851656289d75.png)
 
 Netlify にサイトをデプロイしている場合は、Snippet injection で CDN リンク挿入 → 再デプロイするだけで IE Buster が導入できます。
-
-### Nuxt.js
-
-```js
-module.exports = {
-  head: {
-    script: [
-      {
-        src:
-          "https://cdn.jsdelivr.net/npm/ie-buster@1.0.2/dist/ie-buster.min.js"
-      }
-    ]
-  }
-}
-```
-
-Nuxt.js で Web アプリ・サイトを制作している場合は、`nuxt.config.js` で CDN のリンクを読み込ませる方法が簡単です。
 
 ### WordPress Plugin
 
