@@ -97,7 +97,7 @@ Netlify にサイトをデプロイしている場合は、Snippet injection で
 
 ### WordPress Plugin
 
-[WP IE Buster](https://github.com/qrac/wp-ie-buster) として[WordPress 公式プラグインディレクトリ](https://wordpress.org/plugins/wp-ie-buster/)に追加されました。`ie buster` などで検索・インストール後、有効化するだけで WordPress サイトにポップアップを表示できます。
+[WP IE Buster](https://github.com/qrac/wp-ie-buster-dev) として[WordPress 公式プラグインディレクトリ](https://wordpress.org/plugins/wp-ie-buster/)に追加されました。`ie buster` などで検索・インストール後、有効化するだけで WordPress サイトにポップアップを表示できます。
 
 ![WP IE Buster Install Image](https://i.gyazo.com/fb4631c122e62ff28f4f5d4e01088bfe.png)
 
