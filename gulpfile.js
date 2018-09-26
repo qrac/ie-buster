@@ -27,12 +27,7 @@ const uglify = require("gulp-uglify")
 const svgSprite = require("gulp-svg-sprite")
 
 // Read File
-const files = {
-  package: "./package.json",
-  config: "./config.yml"
-}
-const package = JSON.parse(fs.readFileSync(files.package))
-const config = yaml.safeLoad(fs.readFileSync(files.config))
+const package = JSON.parse(fs.readFileSync("./package.json"))
 
 // Banner
 const banner = {
@@ -48,59 +43,17 @@ const banner = {
 const paths = {
   src: {
     dir: package.project.src + "/",
-    app: package.project.src + "/app/",
-    ejs: package.project.src + "/ejs/",
-    scss: package.project.src + "/scss/",
-    js: package.project.src + "/js/",
-    icon: package.project.src + "/icon/"
+    app: package.project.src + "/app/"
   },
   dist: {
     dir: package.project.dist + "/",
-    app: package.project.dist + "/",
-    html: package.project.dist + "/",
-    css: package.project.dist + "/assets/css/",
-    js: package.project.dist + "/assets/js/",
-    img: package.project.dist + "/assets/img/"
+    app: package.project.dist + "/"
   }
 }
-
-// HTML Beauty Options
-const htmlbeautifyOptions = {
-  indent_size: 2,
-  max_preserve_newlines: 0,
-  indent_inner_html: true,
-  extra_liners: []
-}
-
-// Sass Options
-const sassOptions = {
-  outputStyle: "expanded",
-  importer: packageImporter({
-    extensions: [".scss", ".css"]
-  })
-}
-
-// Autoprefixer Options
-const autoprefixerOptions = {
-  grid: true
-}
-
-// PostCSS Options
-const postcssOptions = [flexBugsFixes, autoprefixer(autoprefixerOptions)]
 
 // Uglify Options
 const uglifyOptions = {
   output: { comments: /^!/ }
-}
-
-// BrowserSync Options
-const browserSyncOptions = {
-  server: {
-    baseDir: paths.dist.html
-  },
-  startPath: "index.html",
-  open: false,
-  notify: false
 }
 
 //----------------------------------------------------
@@ -122,135 +75,8 @@ gulp.task("app", () => {
     .pipe(gulp.dest(paths.dist.app))
 })
 
-// EJS > HTML
-gulp.task("ejs", function(done) {
-  for (const key in config.pages) {
-    const page = config.pages[key]
-    page.path = key
-    const layout = page.layout
-    gulp
-      .src(paths.src.ejs + layout + ".ejs")
-      .pipe(
-        plumber({ errorHandler: notify.onError("Error: <%= error.message %>") })
-      )
-      .pipe(
-        data(function() {
-          return JSON.parse(fs.readFileSync(files.package))
-        })
-      )
-      .pipe(
-        data(function() {
-          return yaml.safeLoad(fs.readFileSync(files.config))
-        })
-      )
-      .pipe(ejs(page))
-      .pipe(rename(key + ".html"))
-      .pipe(htmlbeautify(htmlbeautifyOptions))
-      .pipe(gulp.dest(paths.dist.html))
-    done()
-  }
-})
-
-// SCSS > CSS
-gulp.task("scss", () => {
-  return gulp
-    .src(paths.src.scss + "**/*.scss")
-    .pipe(sassGlob())
-    .pipe(
-      plumber({ errorHandler: notify.onError("Error: <%= error.message %>") })
-    )
-    .pipe(sass(sassOptions))
-    .pipe(postcss(postcssOptions))
-    .pipe(gcmq())
-    .pipe(gulpif(banner.visible, header(banner.basic, { package: package })))
-    .pipe(gulp.dest(paths.dist.css))
-})
-
-// CSS Minify
-gulp.task("cssmin", () => {
-  return gulp
-    .src([paths.dist.css + "**/*.css", "!" + paths.dist.css + "**/*.min.css"])
-    .pipe(
-      plumber({ errorHandler: notify.onError("Error: <%= error.message %>") })
-    )
-    .pipe(cleanCSS())
-    .pipe(rename({ suffix: ".min" }))
-    .pipe(gulp.dest(paths.dist.css))
-})
-
-// SVG Sprite Icon
-gulp.task("sprite", function() {
-  return gulp
-    .src(paths.src.icon + "**/*.svg")
-    .pipe(
-      plumber({ errorHandler: notify.onError("Error: <%= error.message %>") })
-    )
-    .pipe(
-      svgSprite({
-        mode: {
-          symbol: {
-            dest: "./",
-            sprite: "sprite.svg"
-          }
-        },
-        shape: {
-          transform: [
-            {
-              svgo: {
-                plugins: [
-                  { removeTitle: true },
-                  { removeStyleElement: true },
-                  { removeAttrs: { attrs: "fill" } }
-                ]
-              }
-            }
-          ]
-        },
-        svg: {
-          xmlDeclaration: true,
-          doctypeDeclaration: true
-        }
-      })
-    )
-    .pipe(gulp.dest(paths.dist.img))
-})
-
-// Browser Sync
-gulp.task("browser-sync", function(done) {
-  browserSync.init(browserSyncOptions)
-  done()
-})
-
-gulp.task("reload", function(done) {
-  browserSync.reload()
-  done()
-})
-
-// Watch
-gulp.task("watch", () => {
-  gulp.watch(
-    [paths.src.ejs + "**/*.ejs", "!" + paths.src.ejs + "**/_*.ejs"],
-    gulp.series("ejs", "reload")
-  )
-  gulp.watch(
-    paths.src.scss + "**/*.scss",
-    gulp.series("scss", "cssmin", "reload")
-  )
-  gulp.watch(paths.src.app + "**/*.js", gulp.series("app", "reload"))
-  gulp.watch(paths.src.icon + "**/*.svg", gulp.series("sprite", "reload"))
-})
-
-gulp.task("default", gulp.parallel("browser-sync", "watch"))
-
 //----------------------------------------------------
 // gulp: Build
 //----------------------------------------------------
 
-gulp.task(
-  "build",
-  gulp.parallel(
-    gulp.series("app"),
-    gulp.series("ejs"),
-    gulp.series("scss", "cssmin")
-  )
-)
+gulp.task("build", gulp.parallel(gulp.series("app")))

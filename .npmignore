@@ -3,8 +3,5 @@
 #-----------------------------------------------------
 
 # Demo contents
-config.yml
 gulpfile.js
 src
-dist/index.html
-dist/assets

@@ -45,30 +45,13 @@
     "ie 11"
   ],
   "devDependencies": {
-    "autoprefixer": "^9.1.5",
-    "browser-sync": "^2.24.7",
     "gulp": "^4.0.0",
-    "gulp-clean-css": "^3.10.0",
     "gulp-concat": "^2.6.1",
-    "gulp-data": "^1.3.1",
-    "gulp-ejs": "^3.2.0",
-    "gulp-group-css-media-queries": "^1.2.2",
     "gulp-header": "^2.0.5",
-    "gulp-html-beautify": "^1.0.1",
     "gulp-if": "^2.0.2",
     "gulp-notify": "^3.2.0",
     "gulp-plumber": "^1.2.0",
-    "gulp-postcss": "^8.0.0",
     "gulp-rename": "^1.4.0",
-    "gulp-sass": "^4.0.1",
-    "gulp-sass-glob": "^1.0.9",
-    "gulp-svg-sprite": "^1.4.0",
-    "gulp-uglify": "^3.0.1",
-    "moftone": "^6.2.0",
-    "musubii": "^6.5.0",
-    "node-sass-package-importer": "^5.2.0",
-    "postcss-flexbugs-fixes": "^4.1.0",
-    "sass-dashi": "^0.3.0",
-    "shitajicss": "^4.6.0"
+    "gulp-uglify": "^3.0.1"
   }
 }
