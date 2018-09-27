@@ -16,13 +16,13 @@ https://codepen.io/qrac/full/gdPNXN/
 
 ## About
 
-![IE Buster Image](https://i.gyazo.com/a8e2283b557bda08820bf938b9288546.png)
+![IE Buster Image](https://i.gyazo.com/9d06f4a348768f7fb6559ffe487a166a.png)
 
-IE Buster（アイイーバスター）は、IE ユーザーに Chrome を促す 1.5KB のポップアップ JS です。Web 制作者みんなを救うために開発しました。
+IE Buster（アイイーバスター）は、IE ユーザーに Chrome を促す軽量なポップアップ JS です。Web 制作者みんなを救うために開発しました。
 
 多くの場合、IE ユーザーはブラウザの種類を認識していません。IE を強烈に否定しても「IE？なんのこっちゃ？」と暖簾に腕押し状態となってしまうので、もっと自然な移行シーンを増やそうと考えました。そこで、開発したのが IE Buster です。
 
-`ie-buster.js` を読み込んだページに IE8〜11 でアクセスすると、自動的に Chrome ダウンロードを促すポップアップが表示されます。UI は Microsoft の Fabric 風でオフィシャル感を出し、文言はセキュリティに訴えかけてみました。
+`ie-buster.js` を読み込んだページに IE8〜11 でアクセスすると、自動的に Chrome ダウンロードを促すポップアップが表示されます（オプションで文言やリンクの調整が可能）。UI は Microsoft の Fabric 風でオフィシャル感を意識。
 
 閉じるボタンはありません。推奨環境でないブラウザで閲覧を続けられては困るからです。真っ当な提案を、できるだけ礼儀正しく IE ユーザーに届けます。
 
@@ -33,7 +33,7 @@ IE Buster（アイイーバスター）は、IE ユーザーに Chrome を促す
 ### [CDN](https://www.jsdelivr.com/package/npm/ie-buster)
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/ie-buster@1.0.3/dist/ie-buster.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/ie-buster@1.1.0/dist/ie-buster.min.js"></script>
 ```
 
 HTML 内に CDN のリンクを貼るだけで、ポップアップを表示できます。
@@ -51,7 +51,7 @@ $ npm i -D ie-buster
 npm でインストール後、 `App.vue` に下記を追記します。
 
 ```js
-import "ie-buster/dist/ie-buster.min.js"
+import 'ie-buster/dist/ie-buster.min.js'
 ```
 
 ### Nuxt.js
@@ -69,7 +69,7 @@ if (process.browser) {
 ```js
 module.exports = {
   build: {
-    vendor: ["ie-buster"]
+    vendor: ['ie-buster']
   }
 }
 ```
@@ -82,7 +82,7 @@ module.exports = {
     script: [
       {
         src:
-          "https://cdn.jsdelivr.net/npm/ie-buster@1.0.3/dist/ie-buster.min.js"
+          'https://cdn.jsdelivr.net/npm/ie-buster@1.1.0/dist/ie-buster.min.js'
       }
     ]
   }
@@ -99,7 +99,24 @@ Netlify にサイトをデプロイしている場合は、Snippet injection で
 
 [WP IE Buster](https://github.com/qrac/wp-ie-buster-dev) として[WordPress 公式プラグインディレクトリ](https://wordpress.org/plugins/wp-ie-buster/)に追加されました。`ie buster` などで検索・インストール後、有効化するだけで WordPress サイトにポップアップを表示できます。
 
-![WP IE Buster Install Image](https://i.gyazo.com/fb4631c122e62ff28f4f5d4e01088bfe.png)
+※WordPress Plugin 版には、まだカスタマイズ用のオプションが実装されていません
+
+![WP IE Buster Install Image](https://i.gyazo.com/2fffbb18f83a7287a2be3063b7bd53a8.png)
+
+## Options
+
+`ie-buster.js` を読み込んだ後に、オプションを使ってテキストやリンクを差し替えられます。デフォルトでは以下の内容が設定されています。差し替える場合は、文言とリンク内容に齟齬がでないよう気をつけてください。
+
+```html
+<script src="js/ie-buster.js"></script>
+<script>
+  ieBuster({
+    mainText: "ご利用のインターネットブラウザは推奨環境ではありません。Webサイトの動作が保証できませんので、最新の Google Chrome をご利用ください。",
+    linkText: "ダウンロードページへ",
+    linkUrl: "https://www.google.com/chrome/"
+  })
+</script>
+```
 
 ## Support
 
