@@ -7,10 +7,10 @@
   },
   "name": "ie-buster",
   "description": "Save web creators with Chrome link popup for IE.",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "main": "dist/ie-buster.min.js",
   "license": "MIT",
-  "homepage": "https://github.com/qrac/ie-buster#readme",
+  "homepage": "https://ie-buster.qranoko.jp",
   "repository": "https://github.com/qrac/ie-buster",
   "bugs": "https://github.com/qrac/ie-buster/issues",
   "keywords": [
