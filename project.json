@@ -1,0 +1,8 @@
+{
+  "setting": {
+    "name": "IE Buster",
+    "dist": "dist",
+    "src": "src",
+    "banner": true
+  }
+}

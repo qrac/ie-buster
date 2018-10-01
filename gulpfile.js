@@ -13,27 +13,28 @@ const concat = require('gulp-concat')
 const uglify = require('gulp-uglify')
 
 // Read File
-const package = JSON.parse(fs.readFileSync('./package.json'))
+const pkg = JSON.parse(fs.readFileSync('./package.json'))
+const pjt = JSON.parse(fs.readFileSync('./project.json'))
 
 // Banner
 const banner = {
   basic: [
-    '/*! <%= package.project.name %> v<%= package.version %> <%= package.license %> by <%= package.author.name %> */',
+    '/*! <%= pjt.setting.name %> v<%= pkg.version %> <%= pkg.license %> by <%= pkg.author.name %> */',
     '',
     ''
   ].join('\n'),
-  visible: package.project.banner
+  visible: pjt.setting.banner
 }
 
 // Paths
 const paths = {
   src: {
-    dir: package.project.src + '/',
-    app: package.project.src + '/app/'
+    dir: pjt.setting.src + '/',
+    app: pjt.setting.src + '/app/'
   },
   dist: {
-    dir: package.project.dist + '/',
-    app: package.project.dist + '/'
+    dir: pjt.setting.dist + '/',
+    app: pjt.setting.dist + '/'
   }
 }
 
@@ -53,8 +54,8 @@ gulp.task('app', () => {
     .pipe(
       plumber({ errorHandler: notify.onError('Error: <%= error.message %>') })
     )
-    .pipe(concat(package.name + '.js'))
-    .pipe(gulpif(banner.visible, header(banner.basic, { package: package })))
+    .pipe(concat(pkg.name + '.js'))
+    .pipe(gulpif(banner.visible, header(banner.basic, { pkg, pjt })))
     .pipe(gulp.dest(paths.dist.app))
     .pipe(uglify(uglifyOptions))
     .pipe(rename({ suffix: '.min' }))

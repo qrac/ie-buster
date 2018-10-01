@@ -4,4 +4,6 @@
 
 # Demo contents
 gulpfile.js
+.prettierrc.json
+project.json
 src
