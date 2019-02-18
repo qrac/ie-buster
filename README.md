@@ -12,8 +12,6 @@ https://ie-buster.qranoko.jp
 
 https://codepen.io/qrac/full/gdPNXN/
 
-`Change View` → `Open on CrossBrowserTesting` から IE 表示をテストできます。
-
 ## About
 
 ![IE Buster Image](https://i.gyazo.com/9d06f4a348768f7fb6559ffe487a166a.png)
@@ -97,9 +95,7 @@ Netlify にサイトをデプロイしている場合は、Snippet injection で
 
 ### WordPress Plugin
 
-[WP IE Buster](https://github.com/qrac/wp-ie-buster-dev) として[WordPress 公式プラグインディレクトリ](https://wordpress.org/plugins/wp-ie-buster/)に追加されました。`ie buster` などで検索・インストール後、有効化するだけで WordPress サイトにポップアップを表示できます。
-
-※WordPress Plugin 版には、まだカスタマイズ用のオプションが実装されていません
+[WP IE Buster](https://github.com/qrac/wp-ie-buster-dev) として[WordPress 公式プラグインディレクトリ](https://wordpress.org/plugins/wp-ie-buster/)に追加されました。`ie buster` などで検索・インストール後、有効化するだけで WordPress サイトにポップアップを表示できます。管理画面の設定から、テキストやリンクの編集が可能です。
 
 ![WP IE Buster Install Image](https://i.gyazo.com/2fffbb18f83a7287a2be3063b7bd53a8.png)
 
