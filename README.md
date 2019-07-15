@@ -54,22 +54,20 @@ import 'ie-buster/dist/ie-buster.min.js'
 
 ### Nuxt.js
 
-npm でインストール後、Vue ファイルで呼び出して利用できます。IE Buster は JavaScript 内で`window`を使用しているので、Nuxt.js では [SSR を迂回する記述](https://ja.nuxtjs.org/faq/window-document-undefined/)で呼び出します。重複しないよう、`nuxt.config.js` の `build > vendor` にも加えます。
+npm でインストール後、plugins で読み込むだけで利用できます。IE Buster は JavaScript 内で`window`を使用しているので、Nuxt.js では [SSR を迂回する記述](https://ja.nuxtjs.org/faq/window-document-undefined/)で呼び出します。
 
-```html
-<script>
-if (process.browser) {
-  require('ie-buster');
+```js
+// nuxt.config.js
+module.exports = {
+  plugins: [
+    { src: "~plugins/ie-buster.js", ssr: false }
+  ]
 }
-</script>
 ```
 
 ```js
-module.exports = {
-  build: {
-    vendor: ['ie-buster']
-  }
-}
+// plugins/ie-buster.js
+import ieBuster from "ie-buster"
 ```
 
 `nuxt.config.js` に CDN のスクリプトタグを記述する方法でも使用可能です。
