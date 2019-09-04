@@ -60,7 +60,7 @@ npm でインストール後、plugins で読み込むだけで利用できま�
 // nuxt.config.js
 module.exports = {
   plugins: [
-    { src: "~plugins/ie-buster.js", ssr: false }
+    { src: "~plugins/ie-buster.js", mode: "client" }
   ]
 }
 ```
@@ -118,12 +118,6 @@ Netlify にサイトをデプロイしている場合は、Snippet injection で
 - IE 9
 - IE 10
 - IE 11
-
-## Develop
-
-- MacBook Pro: 13-inch 2016 No-touchbar
-- OS: macOS High Sierra 10.13.6
-- Node.js: v10.9.0
 
 ## License
 
