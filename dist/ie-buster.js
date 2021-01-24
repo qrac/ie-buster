@@ -11,10 +11,6 @@ function ieBusterUserAgentCheck() {
 
 function ieBuster(options) {
   window.onload = function () {
-    var ieBusterAlready = document.getElementById('ie-buster-app')
-    if (ieBusterAlready) {
-      ieBusterAlready.parentNode.removeChild(ieBusterAlready)
-    }
     if (ieBusterUserAgentCheck()) {
       options = options || {}
       if (options.mainText == null)
@@ -46,3 +42,5 @@ function ieBuster(options) {
     }
   }
 }
+
+ieBuster()
