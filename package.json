@@ -28,24 +28,12 @@
     "name": "QRANOKO",
     "url": "https://qranoko.jp"
   },
-  "scripts": {
-    "dev": "gulp",
-    "build": "gulp build"
-  },
+  "scripts": {},
   "browserslist": [
     "ie 8",
     "ie 9",
     "ie 10",
     "ie 11"
   ],
-  "devDependencies": {
-    "gulp": "^4.0.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-header": "^2.0.5",
-    "gulp-if": "^2.0.2",
-    "gulp-notify": "^3.2.0",
-    "gulp-plumber": "^1.2.0",
-    "gulp-rename": "^1.4.0",
-    "gulp-uglify": "^3.0.1"
-  }
+  "devDependencies": {}
 }
