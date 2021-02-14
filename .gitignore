@@ -1,22 +1,5 @@
-#-----------------------------------------------------
-# Git Ignore
-#-----------------------------------------------------
-
-# Invisible file
 .DS_Store
 Thumbs.db
-
-# Logs
 *.log
-
-# Dependency directory
 node_modules
-
-# Temporary
-.nuxt
-
-# Distribution
-#dist
-
-# Editor
 .idea

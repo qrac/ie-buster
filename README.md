@@ -49,7 +49,7 @@ $ npm i -D ie-buster
 npm でインストール後、 `App.vue` に下記を追記します。
 
 ```js
-import 'ie-buster/dist/ie-buster.min.js'
+import "ie-buster/dist/ie-buster.min.js"
 ```
 
 ### Nuxt.js
@@ -59,9 +59,7 @@ npm でインストール後、plugins で読み込むだけで利用できま�
 ```js
 // nuxt.config.js
 module.exports = {
-  plugins: [
-    { src: "~plugins/ie-buster.js", mode: "client" }
-  ]
+  plugins: [{ src: "~plugins/ie-buster.js", mode: "client" }],
 }
 ```
 
@@ -78,10 +76,10 @@ module.exports = {
     script: [
       {
         src:
-          'https://cdn.jsdelivr.net/npm/ie-buster@1.1.0/dist/ie-buster.min.js'
-      }
-    ]
-  }
+          "https://cdn.jsdelivr.net/npm/ie-buster@1.1.0/dist/ie-buster.min.js",
+      },
+    ],
+  },
 }
 ```
 
@@ -105,18 +103,16 @@ Netlify にサイトをデプロイしている場合は、Snippet injection で
 <script src="js/ie-buster.js"></script>
 <script>
   ieBuster({
-    mainText: "ご利用のインターネットブラウザは推奨環境ではありません。Webサイトの動作が保証できませんので、最新の Google Chrome をご利用ください。",
+    mainText:
+      "ご利用のインターネットブラウザは推奨環境ではありません。Webサイトの動作が保証できませんので、最新の Google Chrome をご利用ください。",
     linkText: "ダウンロードページへ",
-    linkUrl: "https://www.google.com/chrome/"
+    linkUrl: "https://www.google.com/chrome/",
   })
 </script>
 ```
 
 ## Support
 
-- IE 8
-- IE 9
-- IE 10
 - IE 11
 
 ## License
