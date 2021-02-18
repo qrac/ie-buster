@@ -1,12 +1,11 @@
 class IEBuster {
-  constructor(options = {}) {
-    const defaultOptions = {
-      mainText:
-        "ご利用のインターネットブラウザは推奨環境ではありません。Webサイトの動作が保証できませんので、最新の Google Chrome をご利用ください。",
-      linkText: "ダウンロードページへ",
-      linkUrl: "https://www.google.com/chrome/",
-    }
-    Object.assign(this, defaultOptions, options)
+  constructor(options) {
+    options = {}
+    this.mainText =
+      options.mainText ||
+      "ご利用のインターネットブラウザは推奨環境ではありません。Webサイトの動作が保証できませんので、最新の Google Chrome をご利用ください。"
+    this.linkText = options.linkText || "ダウンロードページへ"
+    this.linkUrl = options.linkUrl || "https://www.google.com/chrome/"
   }
 
   init() {

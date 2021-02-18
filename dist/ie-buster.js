@@ -25,17 +25,13 @@
   }
 
   var IEBuster = /*#__PURE__*/function () {
-    function IEBuster() {
-      var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-
+    function IEBuster(options) {
       _classCallCheck(this, IEBuster);
 
-      var defaultOptions = {
-        mainText: "ご利用のインターネットブラウザは推奨環境ではありません。Webサイトの動作が保証できませんので、最新の Google Chrome をご利用ください。",
-        linkText: "ダウンロードページへ",
-        linkUrl: "https://www.google.com/chrome/"
-      };
-      Object.assign(this, defaultOptions, options);
+      options = {};
+      this.mainText = options.mainText || "ご利用のインターネットブラウザは推奨環境ではありません。Webサイトの動作が保証できませんので、最新の Google Chrome をご利用ください。";
+      this.linkText = options.linkText || "ダウンロードページへ";
+      this.linkUrl = options.linkUrl || "https://www.google.com/chrome/";
     }
 
     _createClass(IEBuster, [{
