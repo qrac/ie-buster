@@ -10,7 +10,7 @@ class IEBuster {
   }
 
   init() {
-    if (this.isIE) {
+    if (this.isIE()) {
       this.reset()
       this.create()
     }

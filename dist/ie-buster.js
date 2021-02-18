@@ -41,7 +41,7 @@
     _createClass(IEBuster, [{
       key: "init",
       value: function init() {
-        if (this.isIE) {
+        if (this.isIE()) {
           this.reset();
           this.create();
         }
@@ -49,8 +49,9 @@
     }, {
       key: "isIE",
       value: function isIE() {
-        //if ((!!window.MSInputMethodContext && !!document.documentMode) || false) {
-        return true; //}
+        if (!!window.MSInputMethodContext && !!document.documentMode || false) {
+          return true;
+        }
       }
     }, {
       key: "reset",
