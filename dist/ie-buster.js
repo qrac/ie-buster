@@ -1,5 +1,5 @@
 /*! IE Buster v1.1.0 MIT by Qrac */
-(function () {
+this['ie-buster'] = (function () {
   'use strict';
 
   function _classCallCheck(instance, Constructor) {
@@ -77,5 +77,7 @@
     var ieBuster = new IEBuster({});
     ieBuster.init();
   };
+
+  return IEBuster;
 
 }());
