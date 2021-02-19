@@ -1,4 +1,4 @@
-const ieBuster = (options) => {
+const ieBuster = (() => {
   const defaultOptions = {
     mainText:
       "ご利用のインターネットブラウザは推奨環境ではありません。Webサイトの動作が保証できませんので、最新の Google Chrome をご利用ください。",
@@ -6,23 +6,13 @@ const ieBuster = (options) => {
     linkUrl: "https://www.google.com/chrome/",
   }
 
-  options = options || {}
-  options.mainText = options.mainText || defaultOptions.mainText
-  options.linkText = options.linkText || defaultOptions.linkText
-  options.linkUrl = options.linkUrl || defaultOptions.linkUrl
+  const create = (options) => {
+    options = options || {}
+    options.mainText = options.mainText || defaultOptions.mainText
+    options.linkText = options.linkText || defaultOptions.linkText
+    options.linkUrl = options.linkUrl || defaultOptions.linkUrl
+    console.log(options)
 
-  const isIE = () => {
-    if ((!!window.MSInputMethodContext && !!document.documentMode) || false) {
-      return true
-    }
-  }
-
-  const reset = () => {
-    const target = document.getElementById("ie-buster-app")
-    target && target.remove()
-  }
-
-  const create = () => {
     const body = document.getElementsByTagName("body")[0]
     const app = document.createElement("div")
 
@@ -48,19 +38,25 @@ const ieBuster = (options) => {
     body.appendChild(app)
   }
 
-  const init = () => {
+  const isIE = () => {
+    //if ((!!window.MSInputMethodContext && !!document.documentMode) || false) {
+    return true
+    //}
+  }
+
+  const reset = () => {
+    const target = document.getElementById("ie-buster-app")
+    target && target.remove()
+  }
+
+  const init = (options) => {
     if (isIE()) {
-      reset()
-      create()
+      create(options)
     }
   }
 
-  return init()
-}
+  return { create, isIE, reset, init }
+})()
 
 export default ieBuster
 window.ieBuster = ieBuster
-
-window.onload = () => {
-  ieBuster()
-}

@@ -2,29 +2,19 @@
 this['ie-buster'] = (function () {
   'use strict';
 
-  var ieBuster = function ieBuster(options) {
+  var ieBuster = function () {
     var defaultOptions = {
       mainText: "ご利用のインターネットブラウザは推奨環境ではありません。Webサイトの動作が保証できませんので、最新の Google Chrome をご利用ください。",
       linkText: "ダウンロードページへ",
       linkUrl: "https://www.google.com/chrome/"
     };
-    options = options || {};
-    options.mainText = options.mainText || defaultOptions.mainText;
-    options.linkText = options.linkText || defaultOptions.linkText;
-    options.linkUrl = options.linkUrl || defaultOptions.linkUrl;
 
-    var isIE = function isIE() {
-      if (!!window.MSInputMethodContext && !!document.documentMode || false) {
-        return true;
-      }
-    };
-
-    var reset = function reset() {
-      var target = document.getElementById("ie-buster-app");
-      target && target.remove();
-    };
-
-    var create = function create() {
+    var create = function create(options) {
+      options = options || {};
+      options.mainText = options.mainText || defaultOptions.mainText;
+      options.linkText = options.linkText || defaultOptions.linkText;
+      options.linkUrl = options.linkUrl || defaultOptions.linkUrl;
+      console.log(options);
       var body = document.getElementsByTagName("body")[0];
       var app = document.createElement("div");
       app.id = "ie-buster-app";
@@ -33,20 +23,30 @@ this['ie-buster'] = (function () {
       body.appendChild(app);
     };
 
-    var init = function init() {
-      if (isIE()) {
-        reset();
-        create();
+    var isIE = function isIE() {
+      //if ((!!window.MSInputMethodContext && !!document.documentMode) || false) {
+      return true; //}
+    };
+
+    var reset = function reset() {
+      var target = document.getElementById("ie-buster-app");
+      target && target.remove();
+    };
+
+    var init = function init(options) {
+      {
+        create(options);
       }
     };
 
-    return init();
-  };
+    return {
+      create: create,
+      isIE: isIE,
+      reset: reset,
+      init: init
+    };
+  }();
   window.ieBuster = ieBuster;
-
-  window.onload = function () {
-    ieBuster();
-  };
 
   return ieBuster;
 
