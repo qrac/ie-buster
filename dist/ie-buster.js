@@ -24,21 +24,6 @@ this['ie-buster'] = (function () {
     return Constructor;
   }
 
-  function _defineProperty(obj, key, value) {
-    if (key in obj) {
-      Object.defineProperty(obj, key, {
-        value: value,
-        enumerable: true,
-        configurable: true,
-        writable: true
-      });
-    } else {
-      obj[key] = value;
-    }
-
-    return obj;
-  }
-
   function _extends() {
     _extends = Object.assign || function (target) {
       for (var i = 1; i < arguments.length; i++) {
@@ -57,40 +42,6 @@ this['ie-buster'] = (function () {
     return _extends.apply(this, arguments);
   }
 
-  function ownKeys(object, enumerableOnly) {
-    var keys = Object.keys(object);
-
-    if (Object.getOwnPropertySymbols) {
-      var symbols = Object.getOwnPropertySymbols(object);
-      if (enumerableOnly) symbols = symbols.filter(function (sym) {
-        return Object.getOwnPropertyDescriptor(object, sym).enumerable;
-      });
-      keys.push.apply(keys, symbols);
-    }
-
-    return keys;
-  }
-
-  function _objectSpread2(target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i] != null ? arguments[i] : {};
-
-      if (i % 2) {
-        ownKeys(Object(source), true).forEach(function (key) {
-          _defineProperty(target, key, source[key]);
-        });
-      } else if (Object.getOwnPropertyDescriptors) {
-        Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
-      } else {
-        ownKeys(Object(source)).forEach(function (key) {
-          Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
-        });
-      }
-    }
-
-    return target;
-  }
-
   var ieBuster = function () {
     var Buster = /*#__PURE__*/function () {
       function Buster() {
@@ -102,60 +53,10 @@ this['ie-buster'] = (function () {
           id: "ie-buster-app",
           mainText: "ご利用のインターネットブラウザは推奨環境ではありません。Webサイトの動作が保証できませんので、最新の Google Chrome をご利用ください。",
           linkText: "ダウンロードページへ",
-          linkUrl: "https://www.google.com/chrome/",
-          appStyles: {
-            position: "fixed",
-            top: "0",
-            left: "0",
-            width: "100%",
-            padding: "16px",
-            boxSizing: "border-box",
-            zIndex: "999999"
-          },
-          cardStyles: {
-            display: "flex",
-            alignItems: "center",
-            width: "100%",
-            maxWidth: "886px",
-            margin: "0 auto",
-            padding: "16px",
-            backgroundColor: "#fff",
-            boxShadow: "0px 0px 5px 0px rgba(0, 0, 0, 0.4)",
-            boxSizing: "border-box",
-            fontFamily: "SegoeUI, Meiryo, sans-serif"
-          },
-          textStyles: {
-            flex: "1 0 0%",
-            maxWidth: "100%",
-            margin: "0",
-            color: "#000",
-            fontSize: "14px",
-            fontWeight: "400",
-            lineHeight: "1.5"
-          },
-          linkStyles: {
-            flex: "none",
-            display: "flex",
-            margin: "0 0 0 16px",
-            padding: "12px 24px",
-            backgroundColor: "#0078d4",
-            boxSizing: "border-box",
-            color: "#fff",
-            fontSize: "12px",
-            fontWeight: "400",
-            lineHeight: "1",
-            textAlign: "center",
-            textDecoration: "none",
-            whiteSpace: "nowrap"
-          }
+          linkUrl: "https://www.google.com/chrome/"
         };
 
         _extends(this, defaultOptions, options);
-
-        options.appStyles && (this.appStyles = _objectSpread2(_objectSpread2({}, defaultOptions.appStyles), options.appStyles));
-        options.cardStyles && (this.cardStyles = _objectSpread2(_objectSpread2({}, defaultOptions.cardStyles), options.cardStyles));
-        options.textStyles && (this.textStyles = _objectSpread2(_objectSpread2({}, defaultOptions.textStyles), options.textStyles));
-        options.linkStyles && (this.linkStyles = _objectSpread2(_objectSpread2({}, defaultOptions.linkStyles), options.linkStyles));
       }
 
       _createClass(Buster, [{
@@ -168,10 +69,10 @@ this['ie-buster'] = (function () {
           var link = document.createElement("a"); //const edge = this.linkUrl.startsWith("microsoft-edge")
 
           app.id = this.id;
-          styling(app, this.appStyles);
-          styling(card, this.cardStyles);
-          styling(text, this.textStyles);
-          styling(link, this.linkStyles);
+          styling(app, appStyles);
+          styling(card, cardStyles);
+          styling(text, textStyles);
+          styling(link, linkStyles);
           text.innerText = this.mainText;
           link.innerText = this.linkText;
           link.href = encodeURIComponent(this.linkUrl); //edge ?? link.setAttribute("target", "_blank")
@@ -194,6 +95,49 @@ this['ie-buster'] = (function () {
     }();
 
     var activeBuster = null;
+    var appStyles = {
+      position: "fixed",
+      top: "0",
+      left: "0",
+      width: "100%",
+      padding: "16px",
+      boxSizing: "border-box",
+      zIndex: "999999"
+    };
+    var cardStyles = {
+      display: "flex",
+      alignItems: "center",
+      maxWidth: "886px",
+      margin: "0 auto",
+      padding: "16px",
+      background: "#fff",
+      boxShadow: "0px 0px 5px 0px rgba(0, 0, 0, 0.4)",
+      boxSizing: "border-box",
+      fontFamily: "SegoeUI, Meiryo, sans-serif"
+    };
+    var textStyles = {
+      flex: "1 0 0%",
+      margin: "0",
+      color: "#000",
+      fontSize: "14px",
+      fontWeight: "400",
+      lineHeight: "1.5"
+    };
+    var linkStyles = {
+      flex: "none",
+      display: "flex",
+      margin: "0 0 0 16px",
+      padding: "12px 24px",
+      background: "#0078d4",
+      boxSizing: "border-box",
+      color: "#fff",
+      fontSize: "12px",
+      fontWeight: "400",
+      lineHeight: "1",
+      textAlign: "center",
+      textDecoration: "none",
+      whiteSpace: "nowrap"
+    };
 
     var styling = function styling(target, styles) {
       Object.keys(styles).map(function (key) {
