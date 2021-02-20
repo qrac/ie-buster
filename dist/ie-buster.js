@@ -92,16 +92,10 @@ this['ie-buster'] = (function () {
       activeBuster.createBuster();
     };
 
-    var remove = function remove() {
-      var target = document.getElementById("ie-buster-app");
-      target && target.remove();
-    };
-
     return {
       init: init,
       check: check,
-      create: create,
-      remove: remove
+      create: create
     };
   }();
   window.ieBuster = ieBuster;

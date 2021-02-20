@@ -55,12 +55,7 @@ const ieBuster = (() => {
     activeBuster.createBuster()
   }
 
-  const remove = () => {
-    const target = document.getElementById("ie-buster-app")
-    target && target.remove()
-  }
-
-  return { init, check, create, remove }
+  return { init, check, create }
 })()
 
 export default ieBuster
