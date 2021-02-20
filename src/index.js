@@ -38,24 +38,24 @@ const ieBuster = (() => {
     body.appendChild(app)
   }
 
-  const isIE = () => {
+  const check = () => {
     //if ((!!window.MSInputMethodContext && !!document.documentMode) || false) {
     return true
     //}
   }
 
-  const reset = () => {
+  const remove = () => {
     const target = document.getElementById("ie-buster-app")
     target && target.remove()
   }
 
   const init = (options) => {
-    if (isIE()) {
+    if (check()) {
       create(options)
     }
   }
 
-  return { create, isIE, reset, init }
+  return { create, check, remove, init }
 })()
 
 export default ieBuster

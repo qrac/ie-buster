@@ -23,12 +23,12 @@ this['ie-buster'] = (function () {
       body.appendChild(app);
     };
 
-    var isIE = function isIE() {
+    var check = function check() {
       //if ((!!window.MSInputMethodContext && !!document.documentMode) || false) {
       return true; //}
     };
 
-    var reset = function reset() {
+    var remove = function remove() {
       var target = document.getElementById("ie-buster-app");
       target && target.remove();
     };
@@ -41,8 +41,8 @@ this['ie-buster'] = (function () {
 
     return {
       create: create,
-      isIE: isIE,
-      reset: reset,
+      check: check,
+      remove: remove,
       init: init
     };
   }();
