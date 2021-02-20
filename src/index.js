@@ -51,8 +51,8 @@ const ieBuster = (() => {
   }
 
   const create = (options) => {
-    activeBuster = new Buster()
-    activeBuster.createBuster(options)
+    activeBuster = new Buster(options)
+    activeBuster.createBuster()
   }
 
   const remove = () => {

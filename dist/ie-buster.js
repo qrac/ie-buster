@@ -88,8 +88,8 @@ this['ie-buster'] = (function () {
     };
 
     var create = function create(options) {
-      activeBuster = new Buster();
-      activeBuster.createBuster(options);
+      activeBuster = new Buster(options);
+      activeBuster.createBuster();
     };
 
     var remove = function remove() {
