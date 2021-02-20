@@ -24,7 +24,7 @@ const ieBuster = (() => {
           margin: "0 auto",
           padding: "16px",
           backgroundColor: "#fff",
-          boxShadow: "rgba(0, 0, 0, 0.4) 0px 0px 5px 0px",
+          boxShadow: "0px 0px 5px 0px rgba(0, 0, 0, 0.4)",
           boxSizing: "border-box",
           fontFamily: "SegoeUI, Meiryo, sans-serif",
         },
@@ -42,7 +42,7 @@ const ieBuster = (() => {
           display: "flex",
           margin: "0 0 0 16px",
           padding: "12px 24px",
-          backgroundColor: "rgb(0, 120, 212)",
+          backgroundColor: "#0078d4",
           boxSizing: "border-box",
           color: "#fff",
           fontSize: "12px",
@@ -54,6 +54,26 @@ const ieBuster = (() => {
         },
       }
       Object.assign(this, defaultOptions, options)
+      options.appStyles &&
+        (this.appStyles = {
+          ...defaultOptions.appStyles,
+          ...options.appStyles,
+        })
+      options.cardStyles &&
+        (this.cardStyles = {
+          ...defaultOptions.cardStyles,
+          ...options.cardStyles,
+        })
+      options.textStyles &&
+        (this.textStyles = {
+          ...defaultOptions.textStyles,
+          ...options.textStyles,
+        })
+      options.linkStyles &&
+        (this.linkStyles = {
+          ...defaultOptions.linkStyles,
+          ...options.linkStyles,
+        })
     }
 
     createBuster() {

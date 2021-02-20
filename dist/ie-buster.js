@@ -24,6 +24,21 @@ this['ie-buster'] = (function () {
     return Constructor;
   }
 
+  function _defineProperty(obj, key, value) {
+    if (key in obj) {
+      Object.defineProperty(obj, key, {
+        value: value,
+        enumerable: true,
+        configurable: true,
+        writable: true
+      });
+    } else {
+      obj[key] = value;
+    }
+
+    return obj;
+  }
+
   function _extends() {
     _extends = Object.assign || function (target) {
       for (var i = 1; i < arguments.length; i++) {
@@ -40,6 +55,40 @@ this['ie-buster'] = (function () {
     };
 
     return _extends.apply(this, arguments);
+  }
+
+  function ownKeys(object, enumerableOnly) {
+    var keys = Object.keys(object);
+
+    if (Object.getOwnPropertySymbols) {
+      var symbols = Object.getOwnPropertySymbols(object);
+      if (enumerableOnly) symbols = symbols.filter(function (sym) {
+        return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+      });
+      keys.push.apply(keys, symbols);
+    }
+
+    return keys;
+  }
+
+  function _objectSpread2(target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i] != null ? arguments[i] : {};
+
+      if (i % 2) {
+        ownKeys(Object(source), true).forEach(function (key) {
+          _defineProperty(target, key, source[key]);
+        });
+      } else if (Object.getOwnPropertyDescriptors) {
+        Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+      } else {
+        ownKeys(Object(source)).forEach(function (key) {
+          Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+        });
+      }
+    }
+
+    return target;
   }
 
   var ieBuster = function () {
@@ -71,7 +120,7 @@ this['ie-buster'] = (function () {
             margin: "0 auto",
             padding: "16px",
             backgroundColor: "#fff",
-            boxShadow: "rgba(0, 0, 0, 0.4) 0px 0px 5px 0px",
+            boxShadow: "0px 0px 5px 0px rgba(0, 0, 0, 0.4)",
             boxSizing: "border-box",
             fontFamily: "SegoeUI, Meiryo, sans-serif"
           },
@@ -89,7 +138,7 @@ this['ie-buster'] = (function () {
             display: "flex",
             margin: "0 0 0 16px",
             padding: "12px 24px",
-            backgroundColor: "rgb(0, 120, 212)",
+            backgroundColor: "#0078d4",
             boxSizing: "border-box",
             color: "#fff",
             fontSize: "12px",
@@ -102,6 +151,11 @@ this['ie-buster'] = (function () {
         };
 
         _extends(this, defaultOptions, options);
+
+        options.appStyles && (this.appStyles = _objectSpread2(_objectSpread2({}, defaultOptions.appStyles), options.appStyles));
+        options.cardStyles && (this.cardStyles = _objectSpread2(_objectSpread2({}, defaultOptions.cardStyles), options.cardStyles));
+        options.textStyles && (this.textStyles = _objectSpread2(_objectSpread2({}, defaultOptions.textStyles), options.textStyles));
+        options.linkStyles && (this.linkStyles = _objectSpread2(_objectSpread2({}, defaultOptions.linkStyles), options.linkStyles));
       }
 
       _createClass(Buster, [{
