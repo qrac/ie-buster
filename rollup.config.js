@@ -25,5 +25,9 @@ export default {
       plugins: [terser()],
     },
   ],
-  plugins: [babel({ babelHelpers: "bundled" })],
+  plugins: [
+    babel({
+      babelHelpers: "bundled",
+    }),
+  ],
 }
