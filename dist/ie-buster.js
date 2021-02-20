@@ -53,7 +53,52 @@ this['ie-buster'] = (function () {
           id: "ie-buster-app",
           mainText: "ご利用のインターネットブラウザは推奨環境ではありません。Webサイトの動作が保証できませんので、最新の Google Chrome をご利用ください。",
           linkText: "ダウンロードページへ",
-          linkUrl: "https://www.google.com/chrome/"
+          linkUrl: "https://www.google.com/chrome/",
+          appStyles: {
+            position: "fixed",
+            top: "0",
+            left: "0",
+            width: "100%",
+            padding: "16px",
+            boxSizing: "border-box",
+            zIndex: "999999"
+          },
+          cardStyles: {
+            display: "flex",
+            alignItems: "center",
+            width: "100%",
+            maxWidth: "886px",
+            margin: "0 auto",
+            padding: "16px",
+            backgroundColor: "#fff",
+            boxShadow: "rgba(0, 0, 0, 0.4) 0px 0px 5px 0px",
+            boxSizing: "border-box",
+            fontFamily: "SegoeUI, Meiryo, sans-serif"
+          },
+          textStyles: {
+            flex: "1 0 0%",
+            maxWidth: "100%",
+            margin: "0",
+            color: "#000",
+            fontSize: "14px",
+            fontWeight: "400",
+            lineHeight: "1.5"
+          },
+          linkStyles: {
+            flex: "none",
+            display: "flex",
+            margin: "0 0 0 16px",
+            padding: "12px 24px",
+            backgroundColor: "rgb(0, 120, 212)",
+            boxSizing: "border-box",
+            color: "#fff",
+            fontSize: "12px",
+            fontWeight: "400",
+            lineHeight: "1",
+            textAlign: "center",
+            textDecoration: "none",
+            whiteSpace: "nowrap"
+          }
         };
 
         _extends(this, defaultOptions, options);
@@ -64,9 +109,23 @@ this['ie-buster'] = (function () {
         value: function createBuster() {
           var body = document.getElementsByTagName("body")[0];
           var app = document.createElement("div");
+          var card = document.createElement("div");
+          var text = document.createElement("p");
+          var link = document.createElement("a"); //const edge = this.linkUrl.startsWith("microsoft-edge")
+
           app.id = this.id;
-          app.setAttribute("style", "position: fixed; top: 0; left: 0; width: 100%; padding: 16px; box-sizing: border-box; z-index: 999999;");
-          app.innerHTML = "<div style=\"width: 100%; max-width:866px; margin: 0 auto; padding: 16px 20px; background-color: #fff; box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 5px 0px; box-sizing: border-box; font-family: SegoeUI, Meiryo, sans-serif;\">" + "<p style=\"display: block; float: left; width: 100%; max-width: 664px; margin: 0; color: #000; font-size: 14px; font-weight: 400; line-height: 1.5;\">" + this.mainText + "</p>" + "<a style=\"display: block; float: right; height: 36px; width: 154px; padding: 0 16px; background-color: rgb(0, 120, 212); box-sizing: border-box; color: #fff; font-size: 12px; font-weight: 400; line-height: 36px; text-align: center; text-decoration: none; white-space: nowrap;\" href=\"" + this.linkUrl + "\" target=\"_blank\" rel=\"noopener noreferrer\">" + this.linkText + "</a>" + "<div style=\"clear: both;\"></div>" + "</div>";
+          styling(app, this.appStyles);
+          styling(card, this.cardStyles);
+          styling(text, this.textStyles);
+          styling(link, this.linkStyles);
+          text.innerText = this.mainText;
+          link.innerText = this.linkText;
+          link.href = encodeURIComponent(this.linkUrl); //edge ?? link.setAttribute("target", "_blank")
+          //edge ?? link.setAttribute("rel", "noopener noreferrer")
+
+          card.appendChild(text);
+          card.appendChild(link);
+          app.appendChild(card);
           body.appendChild(app);
         }
       }, {
@@ -82,10 +141,10 @@ this['ie-buster'] = (function () {
 
     var activeBuster = null;
 
-    var init = function init(options) {
-      if (check()) {
-        create(options);
-      }
+    var styling = function styling(target, styles) {
+      Object.keys(styles).map(function (key) {
+        return target.style[key] = styles[key];
+      });
     };
 
     var check = function check() {
@@ -104,11 +163,17 @@ this['ie-buster'] = (function () {
       activeBuster.removeBuster();
     };
 
+    var init = function init(options) {
+      if (check()) {
+        create(options);
+      }
+    };
+
     return {
-      init: init,
       check: check,
       create: create,
-      remove: remove
+      remove: remove,
+      init: init
     };
   }();
   window.ieBuster = ieBuster;
