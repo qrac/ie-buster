@@ -17,7 +17,7 @@ const ieBuster = (() => {
       const card = document.createElement("div")
       const text = document.createElement("p")
       const link = document.createElement("a")
-      //const edge = this.linkUrl.startsWith("microsoft-edge")
+      const edge = !this.linkUrl.indexOf("microsoft-edge")
 
       app.id = this.id
 
@@ -28,9 +28,9 @@ const ieBuster = (() => {
 
       text.innerText = this.mainText
       link.innerText = this.linkText
-      link.href = encodeURIComponent(this.linkUrl)
-      //edge ?? link.setAttribute("target", "_blank")
-      //edge ?? link.setAttribute("rel", "noopener noreferrer")
+      link.href = encodeURI(this.linkUrl)
+      edge || link.setAttribute("target", "_blank")
+      edge || link.setAttribute("rel", "noopener noreferrer")
 
       card.appendChild(text)
       card.appendChild(link)

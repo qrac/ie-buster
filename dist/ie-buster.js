@@ -66,8 +66,8 @@ this['ie-buster'] = (function () {
           var app = document.createElement("div");
           var card = document.createElement("div");
           var text = document.createElement("p");
-          var link = document.createElement("a"); //const edge = this.linkUrl.startsWith("microsoft-edge")
-
+          var link = document.createElement("a");
+          var edge = !this.linkUrl.indexOf("microsoft-edge");
           app.id = this.id;
           styling(app, appStyles);
           styling(card, cardStyles);
@@ -75,9 +75,9 @@ this['ie-buster'] = (function () {
           styling(link, linkStyles);
           text.innerText = this.mainText;
           link.innerText = this.linkText;
-          link.href = encodeURIComponent(this.linkUrl); //edge ?? link.setAttribute("target", "_blank")
-          //edge ?? link.setAttribute("rel", "noopener noreferrer")
-
+          link.href = encodeURI(this.linkUrl);
+          edge || link.setAttribute("target", "_blank");
+          edge || link.setAttribute("rel", "noopener noreferrer");
           card.appendChild(text);
           card.appendChild(link);
           app.appendChild(card);
