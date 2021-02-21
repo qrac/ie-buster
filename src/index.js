@@ -107,7 +107,7 @@ const ieBuster = (() => {
 
     removeBuster() {
       const target = document.getElementById(this.appId)
-      target && target.remove()
+      target && target.parentNode.removeChild(target)
     }
   }
 

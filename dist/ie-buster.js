@@ -200,7 +200,7 @@
         key: "removeBuster",
         value: function removeBuster() {
           var target = document.getElementById(this.appId);
-          target && target.remove();
+          target && target.parentNode.removeChild(target);
         }
       }]);
 
