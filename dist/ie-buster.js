@@ -51,6 +51,7 @@ this['ie-buster'] = (function () {
 
         var defaultOptions = {
           id: "ie-buster-app",
+          insertSelector: "body",
           mainText: "ご利用のインターネットブラウザは推奨環境ではありません。Webサイトの動作が保証できませんので、最新の Google Chrome をご利用ください。",
           linkText: "ダウンロードページへ",
           linkUrl: "https://www.google.com/chrome/"
@@ -62,7 +63,7 @@ this['ie-buster'] = (function () {
       _createClass(Buster, [{
         key: "createBuster",
         value: function createBuster() {
-          var body = document.getElementsByTagName("body")[0];
+          var body = document.querySelector(this.insertSelector);
           var app = document.createElement("div");
           var card = document.createElement("div");
           var text = document.createElement("p");

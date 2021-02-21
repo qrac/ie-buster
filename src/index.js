@@ -3,6 +3,7 @@ const ieBuster = (() => {
     constructor(options = {}) {
       const defaultOptions = {
         id: "ie-buster-app",
+        insertSelector: "body",
         mainText:
           "ご利用のインターネットブラウザは推奨環境ではありません。Webサイトの動作が保証できませんので、最新の Google Chrome をご利用ください。",
         linkText: "ダウンロードページへ",
@@ -12,7 +13,7 @@ const ieBuster = (() => {
     }
 
     createBuster() {
-      const body = document.getElementsByTagName("body")[0]
+      const body = document.querySelector(this.insertSelector)
       const app = document.createElement("div")
       const card = document.createElement("div")
       const text = document.createElement("p")
