@@ -2,7 +2,7 @@ const ieBuster = (() => {
   class Buster {
     constructor(options = {}) {
       const defaultOptions = {
-        id: "ie-buster-app",
+        appId: "ie-buster-app",
         insertSelector: "body",
         mainText:
           "ご利用のインターネットブラウザは推奨環境ではありません。Webサイトの動作が保証できませんので、最新の Google Chrome をご利用ください。",
@@ -13,14 +13,14 @@ const ieBuster = (() => {
     }
 
     createBuster() {
-      const body = document.querySelector(this.insertSelector)
+      const wrap = document.querySelector(this.insertSelector)
       const app = document.createElement("div")
       const card = document.createElement("div")
       const text = document.createElement("p")
       const link = document.createElement("a")
       const edge = !this.linkUrl.indexOf("microsoft-edge")
 
-      app.id = this.id
+      app.id = this.appId
 
       styling(app, appStyles)
       styling(card, cardStyles)
@@ -36,11 +36,11 @@ const ieBuster = (() => {
       card.appendChild(text)
       card.appendChild(link)
       app.appendChild(card)
-      body.appendChild(app)
+      wrap.appendChild(app)
     }
 
     removeBuster() {
-      const target = document.getElementById(this.id)
+      const target = document.getElementById(this.appId)
       target && target.remove()
     }
   }

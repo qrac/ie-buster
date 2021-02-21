@@ -50,7 +50,7 @@ this['ie-buster'] = (function () {
         _classCallCheck(this, Buster);
 
         var defaultOptions = {
-          id: "ie-buster-app",
+          appId: "ie-buster-app",
           insertSelector: "body",
           mainText: "ご利用のインターネットブラウザは推奨環境ではありません。Webサイトの動作が保証できませんので、最新の Google Chrome をご利用ください。",
           linkText: "ダウンロードページへ",
@@ -63,13 +63,13 @@ this['ie-buster'] = (function () {
       _createClass(Buster, [{
         key: "createBuster",
         value: function createBuster() {
-          var body = document.querySelector(this.insertSelector);
+          var wrap = document.querySelector(this.insertSelector);
           var app = document.createElement("div");
           var card = document.createElement("div");
           var text = document.createElement("p");
           var link = document.createElement("a");
           var edge = !this.linkUrl.indexOf("microsoft-edge");
-          app.id = this.id;
+          app.id = this.appId;
           styling(app, appStyles);
           styling(card, cardStyles);
           styling(text, textStyles);
@@ -82,12 +82,12 @@ this['ie-buster'] = (function () {
           card.appendChild(text);
           card.appendChild(link);
           app.appendChild(card);
-          body.appendChild(app);
+          wrap.appendChild(app);
         }
       }, {
         key: "removeBuster",
         value: function removeBuster() {
-          var target = document.getElementById(this.id);
+          var target = document.getElementById(this.appId);
           target && target.remove();
         }
       }]);
