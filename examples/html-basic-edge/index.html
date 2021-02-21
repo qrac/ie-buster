@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IE Buster</title>
+  </head>
+  <body style="padding: 120px 16px; background: #d2e4dd; color: #29303d">
+    <h1 style="text-align: center">IE Buster</h1>
+    <script src="../../dist/ie-buster.min.js"></script>
+    <script>
+      ieBuster.init({
+        mainText:
+          "ご利用のインターネットブラウザは推奨環境ではありません。Webサイトの動作が保証できませんので、最新の Microsoft Edge をご利用ください。",
+        linkText: "Microsoft Edge で開く",
+        linkUrl: "microsoft-edge:https://ie-buster.qranoko.jp/",
+      })
+    </script>
+  </body>
+</html>

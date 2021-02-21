@@ -54,7 +54,8 @@ this['ie-buster'] = (function () {
           insertSelector: "body",
           mainText: "ご利用のインターネットブラウザは推奨環境ではありません。Webサイトの動作が保証できませんので、最新の Google Chrome をご利用ください。",
           linkText: "ダウンロードページへ",
-          linkUrl: "https://www.google.com/chrome/"
+          linkUrl: "https://www.google.com/chrome/",
+          linkNewTab: true
         };
 
         _extends(this, defaultOptions, options);
@@ -69,6 +70,7 @@ this['ie-buster'] = (function () {
           var text = document.createElement("p");
           var link = document.createElement("a");
           var edge = !this.linkUrl.indexOf("microsoft-edge");
+          var tab = !edge && this.linkNewTab;
           app.id = this.appId;
           styling(app, appStyles);
           styling(card, cardStyles);
@@ -77,8 +79,8 @@ this['ie-buster'] = (function () {
           text.innerText = this.mainText;
           link.innerText = this.linkText;
           link.href = encodeURI(this.linkUrl);
-          edge || link.setAttribute("target", "_blank");
-          edge || link.setAttribute("rel", "noopener noreferrer");
+          tab && link.setAttribute("target", "_blank");
+          tab && link.setAttribute("rel", "noopener noreferrer");
           card.appendChild(text);
           card.appendChild(link);
           app.appendChild(card);

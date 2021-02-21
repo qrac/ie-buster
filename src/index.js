@@ -8,6 +8,7 @@ const ieBuster = (() => {
           "ご利用のインターネットブラウザは推奨環境ではありません。Webサイトの動作が保証できませんので、最新の Google Chrome をご利用ください。",
         linkText: "ダウンロードページへ",
         linkUrl: "https://www.google.com/chrome/",
+        linkNewTab: true,
       }
       Object.assign(this, defaultOptions, options)
     }
@@ -19,6 +20,7 @@ const ieBuster = (() => {
       const text = document.createElement("p")
       const link = document.createElement("a")
       const edge = !this.linkUrl.indexOf("microsoft-edge")
+      const tab = !edge && this.linkNewTab
 
       app.id = this.appId
 
@@ -30,8 +32,8 @@ const ieBuster = (() => {
       text.innerText = this.mainText
       link.innerText = this.linkText
       link.href = encodeURI(this.linkUrl)
-      edge || link.setAttribute("target", "_blank")
-      edge || link.setAttribute("rel", "noopener noreferrer")
+      tab && link.setAttribute("target", "_blank")
+      tab && link.setAttribute("rel", "noopener noreferrer")
 
       card.appendChild(text)
       card.appendChild(link)
