@@ -145,4 +145,3 @@ const ieBuster = (() => {
 })()
 
 export default ieBuster
-window.ieBuster = ieBuster

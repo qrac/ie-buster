@@ -1,3 +1,6 @@
 {
-  "name": "IE Buster"
+  "name": "IE Buster",
+  "variable": {
+    "name": "ieBuster"
+  }
 }

@@ -1,6 +1,10 @@
 /*! IE Buster v1.1.0 MIT by Qrac */
-this['ie-buster'] = (function () {
-  'use strict';
+
+(function (global, factory) {
+  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
+  typeof define === 'function' && define.amd ? define(factory) :
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.ieBuster = factory());
+}(this, (function () { 'use strict';
 
   function _classCallCheck(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
@@ -240,8 +244,7 @@ this['ie-buster'] = (function () {
       init: init
     };
   }();
-  window.ieBuster = ieBuster;
 
   return ieBuster;
 
-}());
+})));
