@@ -14,8 +14,7 @@
   },
   "files": [
     "dist",
-    "lib/cjs",
-    "lib/esm"
+    "lib"
   ],
   "license": "MIT",
   "homepage": "https://ie-buster.qranoko.jp",
