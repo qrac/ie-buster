@@ -37,6 +37,17 @@
     "dev": "rollup -c -w",
     "build": "rollup -c"
   },
+  "prettier": {
+    "semi": false
+  },
+  "babel": {
+    "presets": [
+      "@babel/env"
+    ],
+    "plugins": [
+      "@babel/plugin-transform-object-assign"
+    ]
+  },
   "browserslist": [
     "ie 11"
   ],
