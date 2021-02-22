@@ -1,5 +1,5 @@
 import "../styles/globals.css"
-import ieBuster from "../../../dist/ie-buster.common"
+import ieBuster from "../../../lib/esm"
 
 function MyApp({ Component, pageProps }) {
   process.browser && ieBuster.create()

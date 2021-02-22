@@ -4,8 +4,13 @@
   "version": "1.1.0",
   "cdn": "dist/ie-buster.js",
   "cdn:min": "dist/ie-buster.min.js",
-  "main": "dist/ie-buster.common.js",
-  "module": "dist/ie-buster.es.js",
+  "main": "lib/cjs/index.js",
+  "module": "lib/esm/index.js",
+  "files": [
+    "dist",
+    "lib/cjs",
+    "lib/esm"
+  ],
   "license": "MIT",
   "homepage": "https://ie-buster.qranoko.jp",
   "repository": "https://github.com/qrac/ie-buster",
