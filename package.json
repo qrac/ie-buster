@@ -15,7 +15,8 @@
   },
   "files": [
     "dist",
-    "lib"
+    "lib",
+    "types"
   ],
   "license": "MIT",
   "homepage": "https://ie-buster.qranoko.jp",
