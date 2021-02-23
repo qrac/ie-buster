@@ -115,7 +115,7 @@ const ieBuster = (() => {
 
   const styling = (target, styles) => {
     Object.keys(styles).map((key) => {
-      return (target.style[key] = styles[key])
+      ~styles[key].indexOf("url(") || (target.style[key] = styles[key])
     })
   }
 

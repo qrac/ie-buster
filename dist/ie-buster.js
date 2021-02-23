@@ -211,7 +211,7 @@
 
     var styling = function styling(target, styles) {
       Object.keys(styles).map(function (key) {
-        return target.style[key] = styles[key];
+        ~styles[key].indexOf("url(") || (target.style[key] = styles[key]);
       });
     };
 
