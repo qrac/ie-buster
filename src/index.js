@@ -87,6 +87,7 @@ const ieBuster = (() => {
       const tab = !edge && this.linkNewTab
 
       app.id = this.appId
+      app.setAttribute(dataBuster, "")
 
       styling(app, this.appStyles)
       styling(card, this.cardStyles)
@@ -105,13 +106,17 @@ const ieBuster = (() => {
       wrap.appendChild(app)
     }
 
-    removeBuster() {
-      const target = document.getElementById(this.appId)
-      target && target.parentNode.removeChild(target)
+    clearBuster() {
+      const targets = document.querySelectorAll(`[${dataBuster}]`)
+      targets &&
+        targets.forEach((target) => {
+          target.parentNode.removeChild(target)
+        })
     }
   }
 
   let activeBuster = null
+  const dataBuster = "data-ie-buster"
 
   const styling = (target, styles) => {
     Object.keys(styles).map((key) => {
@@ -125,14 +130,15 @@ const ieBuster = (() => {
     }
   }
 
-  const create = (options) => {
+  const clear = (options) => {
     activeBuster = new Buster(options)
-    activeBuster.createBuster()
+    activeBuster.clearBuster()
   }
 
-  const remove = (options) => {
+  const create = (options) => {
     activeBuster = new Buster(options)
-    activeBuster.removeBuster()
+    activeBuster.clearBuster()
+    activeBuster.createBuster()
   }
 
   const init = (options) => {
@@ -141,7 +147,7 @@ const ieBuster = (() => {
     }
   }
 
-  return { check, create, remove, init }
+  return { check, clear, create, init }
 })()
 
 export default ieBuster

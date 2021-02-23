@@ -1,7 +1,7 @@
 declare module "ie-buster" {
   const check: () => boolean
+  const clear: () => void
   const create: (options?: Options) => void
-  const remove: (options?: Options) => void
   const init: (options?: Options) => void
 
   export interface Options {
