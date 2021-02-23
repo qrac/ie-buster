@@ -6,6 +6,7 @@
   "cdn:min": "dist/ie-buster.min.js",
   "main": "lib/cjs/index.js",
   "module": "lib/esm/index.js",
+  "types": "types/index.d.ts",
   "exports": {
     "import": "./lib/esm/index.js",
     "require": "./lib/cjs/index.js",
