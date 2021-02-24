@@ -42,7 +42,8 @@
   },
   "scripts": {
     "dev": "rollup -c -w",
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "prepublishOnly": "npm run build"
   },
   "prettier": {
     "semi": false
