@@ -6,7 +6,7 @@ declare module "ie-buster" {
 
   export interface Options {
     appId?: string
-    insertSelector?: string
+    parentSelector?: string
     mainText?: string
     linkText?: string
     linkUrl?: string
