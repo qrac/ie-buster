@@ -48,7 +48,7 @@ IE Buster を導入して IE11 でアクセスすると、自動的に Chrome �
 <script nomodule>ieBuster.init()</script>
 ```
 
-`<script>` に `nomodule` を付与すると、ES Modules に対応しているモダンブラウザで JavaScript の読み込み自体をキャンセルできるのでおすすめです。 [#28](https://github.com/qrac/ie-buster/issues/28)
+`<script>` に `nomodule` を付与すると、ES Modules に対応しているモダンブラウザで JavaScript の読み込み自体をキャンセルできます。
 
 ### [npm](https://www.npmjs.com/package/ie-buster)
 
