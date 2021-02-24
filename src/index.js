@@ -109,7 +109,7 @@ const ieBuster = (() => {
     clearBuster() {
       const targets = document.querySelectorAll(`[${dataBuster}]`)
       targets &&
-        targets.forEach((target) => {
+        Array.prototype.forEach.call(targets, (target) => {
           target.parentNode.removeChild(target)
         })
     }
