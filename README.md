@@ -30,8 +30,10 @@ IE Buster（アイイーバスター）は、IE ユーザーに Chrome を促す
 
 ### [CDN](https://www.jsdelivr.com/package/npm/ie-buster)
 
+<!-- prettier-ignore -->
 ```html
-<script src="https://cdn.jsdelivr.net/npm/ie-buster@1.1.0/dist/ie-buster.min.js"></script>
+<script nomodule src="https://cdn.jsdelivr.net/npm/ie-buster@2.0.0/dist/ie-buster.min.js"></script>
+<script nomodule>ieBuster.init()</script>
 ```
 
 HTML 内に CDN のリンクを貼るだけで、ポップアップを表示できます。
