@@ -1,7 +1,7 @@
 {
   "name": "ie-buster",
   "description": "Save web creators with Chrome link popup for IE.",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "cdn": "dist/ie-buster.js",
   "cdn:min": "dist/ie-buster.min.js",
   "main": "lib/cjs/index.js",
