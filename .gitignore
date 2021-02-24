@@ -2,6 +2,7 @@
 Thumbs.db
 *.log
 node_modules
+.env
 .idea
 .next
 out
