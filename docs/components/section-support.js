@@ -1,5 +1,3 @@
-import Grave from "../assets/svgs/grave.svg"
-
 export default function SectionSupport({ props }) {
   return (
     <section className="section" id="support">
@@ -10,7 +8,9 @@ export default function SectionSupport({ props }) {
             className={"markdown"}
             dangerouslySetInnerHTML={{ __html: props.data.support }}
           />
-          <Grave className="grave" />
+          <div className="grave-wrap">
+            <img className="grave" src="/svgs/grave.svg" alt="Grave" />
+          </div>
         </div>
       </div>
     </section>

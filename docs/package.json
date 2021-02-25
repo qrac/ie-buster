@@ -6,14 +6,6 @@
     "build": "next build && next export",
     "start": "next start"
   },
-  "babel": {
-    "presets": [
-      "next/babel"
-    ],
-    "plugins": [
-      "inline-react-svg"
-    ]
-  },
   "dependencies": {
     "@fontsource/m-plus-rounded-1c": "^4.2.1",
     "ie-buster": "file:..",
@@ -23,7 +15,6 @@
     "yakuhanjp": "^3.3.1"
   },
   "devDependencies": {
-    "babel-plugin-inline-react-svg": "^2.0.1",
     "remark": "^13.0.0",
     "remark-gfm": "^1.0.0",
     "remark-highlight.js": "^6.0.0",

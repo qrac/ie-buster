@@ -1,5 +1,3 @@
-import Working from "../assets/svgs/working.svg"
-
 export default function SectionOptions({ props }) {
   return (
     <section className="section" id="options">
@@ -11,7 +9,7 @@ export default function SectionOptions({ props }) {
             dangerouslySetInnerHTML={{ __html: props.data.options }}
           />
         </div>
-        <Working className="working" />
+        <img className="working" src="/svgs/working.svg" alt="Working" />
       </div>
     </section>
   )

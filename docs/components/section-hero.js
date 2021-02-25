@@ -1,15 +1,16 @@
-import LogoIllustration from "../assets/svgs/logo-illustration.svg"
-import Logo from "../assets/svgs/logo.svg"
-
 import ieBusterPkg from "ie-buster/package.json"
 import pjt from "../project.json"
 
 export default function SectionHero() {
   return (
     <section className="hero" id="hero">
-      <LogoIllustration className="logo-illustration" />
+      <img
+        className="logo-illustration"
+        src="/svgs/logo-illustration.svg"
+        alt="IE Buster Illust"
+      />
       <h1>
-        <Logo className="logo" aria-label={pjt.site.title} />
+        <img className="logo" src="/svgs/logo.svg" alt={pjt.site.title} />
       </h1>
       <h2 className="ribbon">{pjt.site.shortDescription}</h2>
       <p className="repo-note">

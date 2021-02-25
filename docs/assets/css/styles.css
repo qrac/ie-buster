@@ -167,11 +167,15 @@ table td {
   line-height: 1.75;
 }
 
-.card .grave {
+.card .grave-wrap {
   display: block;
   margin-right: max(-5vw, -32px);
   margin-bottom: max(-5vw, -32px);
   margin-left: max(-5vw, -32px);
+}
+
+.card .grave {
+  display: block;
 }
 
 .card .license-notes {
