@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "@fontsource/m-plus-rounded-1c": "^4.2.1",
-    "ie-buster": "file:..",
+    "ie-buster": "^2.0.0",
     "next": "10.0.7",
     "react": "17.0.1",
     "react-dom": "17.0.1",
