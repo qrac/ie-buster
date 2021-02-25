@@ -22,7 +22,7 @@ https://ie-buster.qranoko.jp
 
 ## Quick Test
 
-https://codepen.io/qrac/full/gdPNXN/
+https://codepen.io/qrac/pen/MWbrZNQ
 
 ## About
 
