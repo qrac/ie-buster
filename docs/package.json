@@ -23,7 +23,6 @@
     "yakuhanjp": "^3.3.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.13.1",
     "babel-plugin-inline-react-svg": "^2.0.1",
     "remark": "^13.0.0",
     "remark-gfm": "^1.0.0",
