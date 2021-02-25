@@ -1,12 +1,10 @@
-import Image from "next/image"
-
 export default function SectionWordPress() {
   return (
     <section className="section" id="wordpress">
       <div className="inner">
         <h2 className="heading">{"WordPress"}</h2>
         <div className="card">
-          <Image
+          <img
             src="/images/wp-plugin.png"
             width={1508}
             height={496}

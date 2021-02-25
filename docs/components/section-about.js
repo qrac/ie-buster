@@ -1,5 +1,3 @@
-import Image from "next/image"
-
 import ieBusterPkg from "ie-buster/package.json"
 
 export default function SectionAbout() {
@@ -8,7 +6,7 @@ export default function SectionAbout() {
       <div className="inner">
         <h2 className="heading">{"About"}</h2>
         <div className="card">
-          <Image
+          <img
             src="/images/about.png"
             width={1366}
             height={400}
