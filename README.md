@@ -104,18 +104,18 @@ ieBuster.init({
 | `linkText` | `string` | `ダウンロードページへ` |
 | `linkUrl` | `string` | `https://www.google.com/chrome/` |
 | `linkNewTab` | `boolean` | `true` |
-| `appStyles` | `{}` | CSS Objects（詳細は省略） |
-| `cardStyles` | `{}` | CSS Objects（詳細は省略） |
-| `textStyles` | `{}` | CSS Objects（詳細は省略） |
-| `linkStyles` | `{}` | CSS Objects（詳細は省略） |
+| `appStyles` | `{}` | CSS Objects |
+| `cardStyles` | `{}` | CSS Objects |
+| `textStyles` | `{}` | CSS Objects |
+| `linkStyles` | `{}` | CSS Objects |
 
 `appStyles`・`cardStyles`・`textStyles`・`linkStyles` は `camelCaseKey: value` 形式のオブジェクトを設定することでデフォルトの CSS を上書きできます。CSS Injection 攻撃を防ぐため、`value` に `url(...)` を設定することはできません。
 
 ## WordPress
 
-[WP IE Buster](https://wordpress.org/plugins/wp-ie-buster/) として WordPress プラグインをリリースしました 🎉
-
 ![WP IE Buster Install Image](https://i.gyazo.com/2fffbb18f83a7287a2be3063b7bd53a8.png)
+
+[WP IE Buster](https://wordpress.org/plugins/wp-ie-buster/) として WordPress プラグインをリリースしました 🎉
 
 ## Support
 

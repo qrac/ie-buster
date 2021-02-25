@@ -1,0 +1,16 @@
+{
+  "site": {
+    "title": "IE Buster",
+    "subTitle": "IEの亡霊からWeb制作者を守る「IEバスター」",
+    "description": "IE Buster（アイイーバスター）は、IEユーザーにChromeを促す軽量なポップアップJS です。Web制作者みんなを救うために開発しました。",
+    "shortDescription": "IEユーザーにChromeを促す軽量なポップアップJS",
+    "url": "https://ie-buster.qranoko.jp",
+    "twitter": {
+      "id": "Qrac_JP"
+    },
+    "copylight": {
+      "name": "QRANOKO",
+      "startYear": "2018"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "name": "ie-buster-site-next",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "babel": {
+    "presets": [
+      "next/babel"
+    ],
+    "plugins": [
+      "inline-react-svg"
+    ]
+  },
+  "dependencies": {
+    "@fontsource/m-plus-rounded-1c": "^4.2.1",
+    "ie-buster": "file:..",
+    "next": "10.0.7",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "yakuhanjp": "^3.3.1"
+  },
+  "devDependencies": {
+    "babel-plugin-inline-react-svg": "^2.0.1",
+    "remark": "^13.0.0",
+    "remark-gfm": "^1.0.0",
+    "remark-highlight.js": "^6.0.0",
+    "remark-html": "^13.0.1",
+    "remark-remove-comments": "^0.1.3"
+  }
+}
