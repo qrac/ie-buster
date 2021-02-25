@@ -6,14 +6,6 @@
     "build": "next build && next export",
     "start": "next start"
   },
-  "babel": {
-    "presets": [
-      "next/babel"
-    ],
-    "plugins": [
-      "inline-react-svg"
-    ]
-  },
   "dependencies": {
     "@fontsource/m-plus-rounded-1c": "^4.2.1",
     "ie-buster": "file:..",
