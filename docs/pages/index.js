@@ -3,6 +3,7 @@ import markdownToHtml from "../functions/markdownToHtml"
 
 import SectionHero from "../components/section-hero"
 import SectionAbout from "../components/section-about"
+import SectionQuickTest from "../components/section-quicktest"
 import SectionHowToUse from "../components/section-howtouse"
 import SectionMethods from "../components/section-methods"
 import SectionOptions from "../components/section-options"
@@ -15,6 +16,7 @@ export default function Home(props) {
     <main className="main" id="main">
       <SectionHero />
       <SectionAbout />
+      <SectionQuickTest />
       <SectionHowToUse props={props} />
       <SectionMethods props={props} />
       <SectionOptions props={props} />
