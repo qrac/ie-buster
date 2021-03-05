@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "core-js": "^3.9.1",
-    "ie-buster": "file:../..",
+    "ie-buster": "latest",
     "nuxt": "^2.14.12"
   }
 }

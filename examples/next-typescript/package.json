@@ -8,7 +8,7 @@
     "type-check": "tsc"
   },
   "dependencies": {
-    "ie-buster": "file:../..",
+    "ie-buster": "latest",
     "next": "latest",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
