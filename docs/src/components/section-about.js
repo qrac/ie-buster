@@ -1,7 +1,7 @@
 import React from "react"
 import { StaticImage } from "gatsby-plugin-image"
 
-import ieBusterPkg from "ie-buster/package.json"
+import pjt from "../../project.json"
 
 export default function SectionAbout() {
   return (
@@ -21,7 +21,7 @@ export default function SectionAbout() {
                 "IE Buster（アイイーバスター）は、IEユーザーにChromeを促す軽量なポップアップJSです。Web制作者みんなを救うために開発しました。"
               }
             </span>
-            <a href={ieBusterPkg.repository.url + "#about"}>{"（ → 詳細 ）"}</a>
+            <a href={pjt.site.github.url + "#about"}>{"（ → 詳細 ）"}</a>
           </p>
         </div>
       </div>

@@ -19,9 +19,9 @@ export default function SectionHero() {
         <span>{" / "}</span>
         <span>{ieBusterPkg.license}</span>
         <span>{" / "}</span>
-        <a href={ieBusterPkg.repository.url}>Repository</a>
+        <a href={pjt.site.github.url}>Repository</a>
         <span>{" / "}</span>
-        <a href={ieBusterPkg.repository.url + "/releases"}>Releases</a>
+        <a href={pjt.site.github.url + "/releases"}>Releases</a>
       </p>
     </section>
   )
