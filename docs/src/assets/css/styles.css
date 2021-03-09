@@ -51,6 +51,7 @@ svg:not([fill]) {
   border-radius: 3px;
   color: var(--theme-lk-tx);
   font-size: 0.875em;
+  font-family: var(--theme-font-mono);
   word-break: keep-all;
 }
 
@@ -107,6 +108,7 @@ table td {
 .repo-note {
   margin-top: 1rem;
   text-align: center;
+  font-family: var(--theme-font-sans-en);
 }
 
 /*----------------------------------------------------
@@ -127,6 +129,7 @@ table td {
   margin-bottom: 1.25rem;
   font-size: min(7vw, 2rem);
   font-weight: 700;
+  font-family: var(--theme-font-sans-en);
   text-align: center;
 }
 
@@ -155,6 +158,7 @@ table td {
   margin-top: -0.25rem;
   font-size: min(5vw, 1.5rem);
   font-weight: 700;
+  font-family: var(--theme-font-sans-en);
   text-align: center;
 }
 
@@ -174,6 +178,7 @@ table td {
 }
 
 .card .license-notes {
+  font-family: var(--theme-font-sans-en);
   text-align: center;
 }
 
@@ -194,6 +199,7 @@ table td {
 .markdown .hljs {
   padding: 1.25rem 1.5rem;
   border-radius: 4px;
+  font-family: var(--theme-font-mono);
   word-break: normal;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
@@ -219,5 +225,6 @@ table td {
 }
 
 .copylight {
+  font-family: var(--theme-font-sans-en);
   text-align: center;
 }

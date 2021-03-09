@@ -4,10 +4,6 @@ import ieBuster from "ie-buster"
 
 import AppFooter from "./app-footer"
 
-import "@fontsource/m-plus-rounded-1c/500.css"
-import "@fontsource/m-plus-rounded-1c/700.css"
-import "yakuhanjp/dist/css/yakuhanrp_s.css"
-
 import "../assets/css/theme-light.css"
 import "../assets/css/theme-dark.css"
 import "../assets/css/theme-variable.css"

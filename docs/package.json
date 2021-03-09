@@ -16,7 +16,6 @@
     "ie 11"
   ],
   "dependencies": {
-    "@fontsource/m-plus-rounded-1c": "^4.2.2",
     "gatsby": "^3.0.2",
     "gatsby-plugin-google-analytics": "^3.0.0",
     "gatsby-plugin-image": "^1.0.0",
@@ -31,7 +30,6 @@
     "ie-buster": "latest",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-helmet": "^6.1.0",
-    "yakuhanjp": "^3.3.1"
+    "react-helmet": "^6.1.0"
   }
 }
