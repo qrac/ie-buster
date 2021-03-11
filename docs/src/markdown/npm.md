@@ -1,7 +1,7 @@
 ### [npm](https://www.npmjs.com/package/ie-buster)
 
 ```bash
-$ npm i ie-buster
+$ npm install ie-buster
 ```
 
 ```js

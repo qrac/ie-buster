@@ -53,7 +53,7 @@ IE Buster を導入して IE11 でアクセスすると、自動的に Chrome �
 ### [npm](https://www.npmjs.com/package/ie-buster)
 
 ```bash
-$ npm i ie-buster
+$ npm install ie-buster
 ```
 
 ```js
