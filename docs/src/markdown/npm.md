@@ -16,7 +16,7 @@ process.browser && ieBuster.init()
 // OR (If process is not defined)
 useEffect(() => {
   ieBuster.init()
-})
+}, [])
 ```
 
 TypeScript 向けに型情報も提供しています。

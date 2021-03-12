@@ -16,7 +16,7 @@ const site = pjt.site
 export default function AppLayout({ children }) {
   useEffect(() => {
     ieBuster.init()
-  })
+  }, [])
   return (
     <div className="app" id="app">
       <Helmet htmlAttributes={{ lang: "ja" }}>
