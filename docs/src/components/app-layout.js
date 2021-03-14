@@ -1,6 +1,5 @@
-import React, { useEffect } from "react"
+import React from "react"
 import { Helmet } from "react-helmet"
-import ieBuster from "ie-buster"
 
 import AppFooter from "./app-footer"
 
@@ -14,9 +13,6 @@ import pjt from "../../project.json"
 const site = pjt.site
 
 export default function AppLayout({ children }) {
-  useEffect(() => {
-    ieBuster.init()
-  }, [])
   return (
     <div className="app" id="app">
       <Helmet htmlAttributes={{ lang: "ja" }}>
@@ -38,6 +34,11 @@ export default function AppLayout({ children }) {
         <meta name="twitter:creator" content={"@" + site.twitter.id} />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="icon" href="/favicon.png" />
+        <script
+          nomodule
+          src="https://cdn.jsdelivr.net/npm/ie-buster@2.0.1/dist/ie-buster.min.js"
+        />
+        <script nomodule>ieBuster.init()</script>
       </Helmet>
       <main className="main" id="main">
         {children}
