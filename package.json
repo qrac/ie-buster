@@ -1,7 +1,7 @@
 {
   "name": "ie-buster",
   "description": "Save web creators with Chrome link popup for IE.",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "cdn": "dist/ie-buster.js",
   "cdn:min": "dist/ie-buster.min.js",
   "main": "lib/cjs/index.js",
@@ -60,11 +60,11 @@
     ]
   },
   "devDependencies": {
-    "@babel/core": "^7.17.9",
+    "@babel/core": "^7.17.10",
     "@babel/plugin-transform-object-assign": "^7.16.7",
-    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-env": "^7.17.10",
     "@rollup/plugin-babel": "^5.3.1",
-    "rollup": "^2.70.2",
+    "rollup": "^2.73.0",
     "rollup-plugin-terser": "^7.0.2"
   }
 }
