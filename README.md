@@ -52,6 +52,23 @@ npm run docs
 
 配布 JS は IE11 向けに ES5 互換の構文で記述し、ビルド時に構文検証します。TypeScript は型チェックと型定義の生成に使用します。IE11 の実機確認には、`play` の HTML とビルド済みのクラシックスクリプトを使用してください。
 
+## Cloudflare Workers
+
+ドキュメントサイトは `wrangler.jsonc` の設定で `docs/dist` を静的配信します。
+
+```bash
+npm run docs:preview:workers
+npm run docs:deploy
+```
+
+Cloudflare Workers Builds で GitHub リポジトリを連携する場合は、以下を設定します。
+
+- ルートディレクトリ: リポジトリルート
+- ビルドコマンド: `npm run docs:build`
+- デプロイコマンド: `npx wrangler deploy`
+- ビルド環境変数: `NODE_VERSION=24`
+- Worker 名: `ie-buster`（`wrangler.jsonc` の `name` と一致させる）
+
 ## License
 
 - MIT

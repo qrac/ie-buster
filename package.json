@@ -18,6 +18,8 @@
     "docs": "npm run build && minista ./docs",
     "docs:build": "npm run build && minista build ./docs",
     "docs:preview": "minista preview ./docs",
+    "docs:preview:workers": "npm run docs:build && wrangler dev",
+    "docs:deploy": "npm run docs:build && wrangler deploy",
     "docs:check": "tsc -p docs/tsconfig.json --noEmit",
     "play": "npm run build && vite --config play/vite.config.ts",
     "audit": "npx npm-audit-trace",
@@ -37,6 +39,7 @@
     "rolldown": "^1.2.15",
     "terser": "^5.51.2",
     "typescript": "^7.0.2",
-    "vite": "^8.3.5"
+    "vite": "^8.3.5",
+    "wrangler": "^4.152.0"
   }
 }
