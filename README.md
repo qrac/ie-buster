@@ -44,11 +44,13 @@ npm run check
 npm run docs
 ```
 
-- `packages/ie-buster`: Vite / TypeScript によるライブラリと型定義
+- `packages/ie-buster`: Rolldown / TypeScript によるライブラリと型定義
 - `docs`: minista によるドキュメントサイト。`npm run docs:build` で静的出力
 - `play`: `npm run play` で手動検証用ページを配信。`/_default/` は通常表示、`/secure/` はスタイルの URL 制限を確認
 
-配布 JS は IE11 向けに ES5 へ変換します。ES5 出力を維持するため、TypeScript は 5.9 系を使用しています。IE11 の実機確認には、`play` の HTML とビルド済みのクラシックスクリプトを使用してください。
+配布先は v2.0.2 と同じ `dist/ie-buster.js`・`dist/ie-buster.min.js`・`lib/cjs/index.js`・`lib/esm/index.js`・`types/index.d.ts` です。`npm test` で公開済み v2.0.2 との動作比較を行います。
+
+配布 JS は IE11 向けに ES5 互換の構文で記述し、ビルド時に構文検証します。TypeScript は型チェックと型定義の生成に使用します。IE11 の実機確認には、`play` の HTML とビルド済みのクラシックスクリプトを使用してください。
 
 ## License
 

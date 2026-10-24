@@ -5,11 +5,13 @@
   "version": "2.0.2",
   "cdn": "dist/ie-buster.js",
   "cdn:min": "dist/ie-buster.min.js",
-  "main": "dist/index.cjs",
-  "module": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "lib/cjs/index.js",
+  "module": "lib/esm/index.js",
+  "types": "types/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "lib",
+    "types"
   ],
   "license": "MIT",
   "homepage": "https://ie-buster.qranoko.jp",
@@ -39,18 +41,21 @@
     "url": "https://qranoko.jp"
   },
   "scripts": {
-    "dev": "vite build --watch",
-    "build": "vite build && vite build --mode minified && tsc -p tsconfig.build.json",
+    "dev": "npm run clean && rolldown -c --watch",
+    "build": "npm run clean && rolldown -c && tsc -p tsconfig.build.json",
     "check": "tsc --noEmit",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "clean": "node scripts/clean.mjs"
   },
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
+      "types": "./types/index.d.ts",
+      "import": "./lib/esm/index.js",
+      "require": "./lib/cjs/index.js"
     },
     "./package.json": "./package.json",
-    "./dist/*": "./dist/*"
+    "./dist/*": "./dist/*",
+    "./lib/*": "./lib/*",
+    "./types/*": "./types/*"
   }
 }

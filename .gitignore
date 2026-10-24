@@ -10,3 +10,4 @@ dist/
 lib/
 .env
 .idea/
+packages/*/types/

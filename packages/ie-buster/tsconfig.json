@@ -4,5 +4,5 @@
     "lib": ["ES5", "DOM"],
     "types": ["node"]
   },
-  "include": ["src", "vite.config.ts"]
+  "include": ["src", "rolldown.config.ts"]
 }

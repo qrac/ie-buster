@@ -13,7 +13,7 @@ export interface Options {
   linkStyles?: Styles
 }
 
-const defaultOptions: Required<Options> = {
+var defaultOptions: Required<Options> = {
   appId: "ie-buster-app",
   parentSelector: "body",
   mainText:
@@ -68,50 +68,77 @@ const defaultOptions: Required<Options> = {
   },
 }
 
-const dataBuster = "data-ie-buster"
+var dataBuster = "data-ie-buster"
 
 function styling(target: HTMLElement, styles: Styles): void {
   Object.keys(styles).forEach(function (key) {
-    const value = String(styles[key])
-    if (value.toLowerCase().indexOf("url(") === -1) {
-      ;(target.style as unknown as Record<string, string>)[key] = value
+    var value = styles[key]
+    if ((value as string).indexOf("url(") === -1) {
+      ;(target.style as unknown as Styles)[key] = value
     }
   })
 }
 
-function check(): boolean {
-  return !!(
-    (window as Window & { MSInputMethodContext?: unknown })
-      .MSInputMethodContext &&
+function check(): boolean | undefined {
+  if (
+    (window as Window & { MSInputMethodContext?: unknown }).MSInputMethodContext &&
     (document as Document & { documentMode?: number }).documentMode
-  )
+  ) {
+    return true
+  }
 }
 
 function clear(): void {
-  const targets = document.querySelectorAll("[" + dataBuster + "]")
+  var targets = document.querySelectorAll("[" + dataBuster + "]")
   Array.prototype.forEach.call(targets, function (target: HTMLElement) {
-    if (target.parentNode) target.parentNode.removeChild(target)
+    target.parentNode!.removeChild(target)
   })
 }
 
-function create(options: Options = {}): void {
-  const settings = { ...defaultOptions, ...options }
-  const wrap = document.querySelector(settings.parentSelector)
-  if (!wrap) return
+// Keep runtime syntax compatible with ES5. The build rejects newer syntax in
+// classic scripts so IE11 support does not depend on a compiler's ES5 backend.
+function merge<T extends object>(defaults: T, overrides?: Partial<T>): T {
+  var result = {} as T
+  Object.keys(defaults).forEach(function (key) {
+    result[key as keyof T] = defaults[key as keyof T]
+  })
+  if (overrides) {
+    Object.keys(overrides).forEach(function (key) {
+      result[key as keyof T] = overrides[key as keyof T] as T[keyof T]
+    })
+  }
+  return result
+}
 
+function create(options?: Options): void {
+  options = options === undefined ? {} : options
+  var settings = merge(defaultOptions, options)
+  if (options.appStyles) {
+    settings.appStyles = merge(defaultOptions.appStyles, options.appStyles)
+  }
+  if (options.cardStyles) {
+    settings.cardStyles = merge(defaultOptions.cardStyles, options.cardStyles)
+  }
+  if (options.textStyles) {
+    settings.textStyles = merge(defaultOptions.textStyles, options.textStyles)
+  }
+  if (options.linkStyles) {
+    settings.linkStyles = merge(defaultOptions.linkStyles, options.linkStyles)
+  }
   clear()
-  const app = document.createElement("div")
-  const card = document.createElement("div")
-  const text = document.createElement("p")
-  const link = document.createElement("a")
-  const edge = settings.linkUrl.indexOf("microsoft-edge") === 0
+  var wrap = document.querySelector(settings.parentSelector)
+  var app = document.createElement("div")
+  var card = document.createElement("div")
+  var text = document.createElement("p")
+  var link = document.createElement("a")
+  var edge = settings.linkUrl.indexOf("microsoft-edge") === 0
 
   app.id = settings.appId
   app.setAttribute(dataBuster, "")
-  styling(app, { ...defaultOptions.appStyles, ...options.appStyles })
-  styling(card, { ...defaultOptions.cardStyles, ...options.cardStyles })
-  styling(text, { ...defaultOptions.textStyles, ...options.textStyles })
-  styling(link, { ...defaultOptions.linkStyles, ...options.linkStyles })
+  styling(app, settings.appStyles)
+  styling(card, settings.cardStyles)
+  styling(text, settings.textStyles)
+  styling(link, settings.linkStyles)
 
   text.innerText = settings.mainText
   link.innerText = settings.linkText
@@ -123,11 +150,11 @@ function create(options: Options = {}): void {
   card.appendChild(text)
   card.appendChild(link)
   app.appendChild(card)
-  wrap.appendChild(app)
+  wrap!.appendChild(app)
 }
 
 function init(options?: Options): void {
   if (check()) create(options)
 }
 
-export default { check, clear, create, init }
+export default { check: check, clear: clear, create: create, init: init }
