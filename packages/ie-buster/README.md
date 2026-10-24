@@ -1,20 +1,4 @@
-<p align="center">
-  <img width="230" src="https://i.gyazo.com/a238286ee75bc88afb08abb435192bf1.png" alt="IE Buster Logo Illustration">
-</p>
-
 # IE Buster
-
-<p>
-  <a aria-label="Made by QRANOKO" href="https://qranoko.jp">
-    <img src="https://img.shields.io/badge/MADE%20BY%20QRANOKO-212121.svg?style=for-the-badge&labelColor=212121">
-  </a>
-  <a aria-label="NPM version" href="https://www.npmjs.com/package/ie-buster">
-    <img alt="" src="https://img.shields.io/npm/v/ie-buster.svg?style=for-the-badge&labelColor=212121">
-  </a>
-  <a aria-label="License" href="https://github.com/qrac/ie-buster/blob/master/LICENSE">
-    <img alt="" src="https://img.shields.io/npm/l/ie-buster.svg?style=for-the-badge&labelColor=212121">
-  </a>
-</p>
 
 ## Site & Documentation
 
@@ -26,19 +10,17 @@ https://codepen.io/qrac/pen/MWbrZNQ
 
 ## About
 
-![IE Buster Image](https://i.gyazo.com/9d06f4a348768f7fb6559ffe487a166a.png)
+IE Buster（アイイーバスター）は、IEユーザーにChromeを促す軽量なポップアップJSです。Web制作者みんなを救うために開発しました。
 
-IE Buster（アイイーバスター）は、IE ユーザーに Chrome を促す軽量なポップアップ JS です。Web 制作者みんなを救うために開発しました。
+多くの場合、IEユーザーはブラウザの種類を認識していません。IEを強烈に否定しても「IE？なんのこっちゃ？」と暖簾に腕押し状態となってしまうので、もっと自然な移行シーンを増やそうと考えました。そこで、開発したのがIE Busterです。
 
-多くの場合、IE ユーザーはブラウザの種類を認識していません。IE を強烈に否定しても「IE？なんのこっちゃ？」と暖簾に腕押し状態となってしまうので、もっと自然な移行シーンを増やそうと考えました。そこで、開発したのが IE Buster です。
+IE Busterを導入してIE11でアクセスすると、自動的にChromeダウンロードを促すポップアップが表示されます。UIはMicrosoft風でオフィシャル感を意識。
 
-IE Buster を導入して IE11 でアクセスすると、自動的に Chrome ダウンロードを促すポップアップが表示されます。UI は Microsoft 風でオフィシャル感を意識。
+閉じるボタンはありません。推奨環境でないブラウザで閲覧を続けられては困るからです。真っ当な提案を、できるだけ礼儀正しくIEユーザーに届けます。
 
-閉じるボタンはありません。推奨環境でないブラウザで閲覧を続けられては困るからです。真っ当な提案を、できるだけ礼儀正しく IE ユーザーに届けます。
+ネーミング程の破壊力はないかもしれませんが、IE BusterがWeb制作者を救う一手になれば幸いです。
 
-ネーミング程の破壊力はないかもしれませんが、IE Buster が Web 制作者を救う一手になれば幸いです。
-
-## How To Use
+## Setup
 
 ### [CDN](https://www.jsdelivr.com/package/npm/ie-buster)
 
@@ -48,7 +30,7 @@ IE Buster を導入して IE11 でアクセスすると、自動的に Chrome �
 <script nomodule>ieBuster.init()</script>
 ```
 
-`<script>` に `nomodule` を付与すると、ES Modules に対応しているモダンブラウザで JavaScript の読み込み自体をキャンセルできます。
+`<script>`に`nomodule`を付与すると、ES Modulesに対応しているモダンブラウザでJavaScriptの読み込み自体をキャンセルできます。
 
 ### [npm](https://www.npmjs.com/package/ie-buster)
 
@@ -71,15 +53,15 @@ useEffect(() => {
 }, [])
 ```
 
-TypeScript 向けに型情報も提供しています。
+TypeScript向けに型情報も提供しています。
 
 ## Methods
 
 | Method              | Result                                          |
 | ------------------- | ----------------------------------------------- |
-| `ieBuster.init()`   | 通常の実行：IE 検出をしてポップアップ表示       |
-| `ieBuster.check()`  | IE 検出のみ：付随する処理を同時に行う場合に使う |
-| `ieBuster.create()` | ポップアップ表示のみ：IE 検出を含まない         |
+| `ieBuster.init()`   | 通常の実行：IE検出をしてポップアップ表示       |
+| `ieBuster.check()`  | IE検出のみ：付随する処理を同時に行う場合に使う |
+| `ieBuster.create()` | ポップアップ表示のみ：IE検出を含まない         |
 | `ieBuster.clear()`  | ポップアップをすべて削除                        |
 
 ## Options
@@ -114,13 +96,13 @@ ieBuster.init({
 | `textStyles` | `{}` | CSS Objects |
 | `linkStyles` | `{}` | CSS Objects |
 
-`appStyles`・`cardStyles`・`textStyles`・`linkStyles` は `camelCaseKey: value` 形式のオブジェクトを設定することでデフォルトの CSS を上書きできます。CSS Injection 攻撃を防ぐため、`value` に `url(...)` を設定することはできません。
+`appStyles`・`cardStyles`・`textStyles`・`linkStyles`は`camelCaseKey: value`形式のオブジェクトを設定することでデフォルトのCSSを上書きできます。CSS Injection攻撃を防ぐため、`value`に`url(...)`を設定することはできません。
 
 ## WordPress
 
 ![WP IE Buster Install Image](https://i.gyazo.com/2fffbb18f83a7287a2be3063b7bd53a8.png)
 
-[WP IE Buster](https://wordpress.org/plugins/wp-ie-buster/) として WordPress プラグインをリリースしました 🎉
+[WP IE Buster](https://wordpress.org/plugins/wp-ie-buster/)としてWordPressプラグインをリリースしました 🎉
 
 ## Support
 
