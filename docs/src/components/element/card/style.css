@@ -1,0 +1,37 @@
+.card {
+  max-width: var(--theme-card-width);
+  margin: 0 auto;
+  padding: min(5vw, 32px);
+  border: 2px solid var(--theme-tx-3);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.card + .card {
+  margin-top: 1rem;
+}
+
+.card > *:not(:first-child) {
+  margin-top: 1rem;
+}
+
+.card-end-cover {
+  display: block;
+  margin-right: max(-5vw, -32px);
+  margin-bottom: max(-5vw, -32px);
+  margin-left: max(-5vw, -32px);
+}
+
+.card-end-cover svg {
+  display: block;
+}
+
+.card-license-notes {
+  font-family: var(--theme-font-sans-en);
+  text-align: center;
+}
+
+.card-license-notes span,
+.card-license-notes a {
+  display: inline-block;
+}

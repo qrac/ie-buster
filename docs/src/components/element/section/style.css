@@ -1,0 +1,24 @@
+.section {
+  padding: 1.5rem 0;
+}
+
+.section .svg-working {
+  display: block;
+  margin-top: 2rem;
+  margin-bottom: -2rem;
+  width: 100%;
+}
+
+.section-inner {
+  max-width: var(--theme-site-width);
+  padding: 0 16px;
+  margin: 0 auto;
+}
+
+.section-heading {
+  margin-bottom: 1.25rem;
+  font-size: min(7vw, 2rem);
+  font-weight: 700;
+  font-family: var(--theme-font-sans-en);
+  text-align: center;
+}

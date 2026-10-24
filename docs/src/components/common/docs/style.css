@@ -1,0 +1,29 @@
+.docs > *:not(:first-child) {
+  margin-top: 1rem;
+}
+
+.docs h3 {
+  margin-top: -0.25rem;
+  font-size: min(5vw, 1.5rem);
+  font-weight: 700;
+  font-family: var(--theme-font-sans-en);
+  text-align: center;
+}
+
+.docs p {
+  line-height: 1.75;
+}
+
+.docs pre {
+  padding: 1.25rem 1.5rem;
+  border-radius: 4px;
+  font-family: var(--theme-font-mono);
+  word-break: normal;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.docs pre {
+  background: #2e3440;
+  color: #d8dee9;
+}

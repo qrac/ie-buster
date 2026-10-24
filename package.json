@@ -1,70 +1,41 @@
 {
-  "name": "ie-buster",
-  "description": "Save web creators with Chrome link popup for IE.",
+  "name": "ie-buster-monorepo",
   "version": "2.0.2",
-  "cdn": "dist/ie-buster.js",
-  "cdn:min": "dist/ie-buster.min.js",
-  "main": "lib/cjs/index.js",
-  "module": "lib/esm/index.js",
-  "types": "types/index.d.ts",
-  "files": [
-    "dist",
-    "lib",
-    "types"
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "workspaces": [
+    "docs",
+    "packages/*"
   ],
-  "license": "MIT",
-  "homepage": "https://ie-buster.qranoko.jp",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/qrac/ie-buster"
-  },
-  "bugs": {
-    "url": "https://github.com/qrac/ie-buster/issues"
-  },
-  "keywords": [
-    "javascript",
-    "ie",
-    "ie11",
-    "japanese"
-  ],
-  "author": {
-    "name": "Qrac",
-    "url": "https://qrac.jp"
-  },
-  "illustration": {
-    "name": "Mainoko",
-    "url": "https://mainoko.jp"
-  },
-  "organization": {
-    "name": "QRANOKO",
-    "url": "https://qranoko.jp"
-  },
   "scripts": {
-    "dev": "rollup -c -w",
-    "build": "rollup -c",
-    "prepublishOnly": "npm run build",
-    "clean": "trash ./dist ./lib"
-  },
-  "prettier": {
-    "semi": false
-  },
-  "browserslist": [
-    "ie 11"
-  ],
-  "babel": {
-    "presets": [
-      "@babel/env"
-    ],
-    "plugins": [
-      "@babel/plugin-transform-object-assign"
-    ]
+    "dev": "npm run dev -w ie-buster",
+    "build": "npm run build -w ie-buster",
+    "test": "npm run build && node --test packages/ie-buster/tests/*.test.mjs",
+    "check": "npm run check -w ie-buster && npm run docs:check",
+    "docs": "npm run build && minista ./docs",
+    "docs:build": "npm run build && minista build ./docs",
+    "docs:preview": "minista preview ./docs",
+    "docs:check": "tsc -p docs/tsconfig.json --noEmit",
+    "play": "npm run build && vite --config play/vite.config.ts",
+    "audit": "npx npm-audit-trace",
+    "up": "npx npm-check-updates --deep",
+    "up:u": "npx npm-check-updates --deep -u",
+    "rev": "npx npm-replace-versions",
+    "release": "npm publish -w ie-buster"
   },
   "devDependencies": {
-    "@babel/core": "^7.17.10",
-    "@babel/plugin-transform-object-assign": "^7.16.7",
-    "@babel/preset-env": "^7.17.10",
-    "@rollup/plugin-babel": "^5.3.1",
-    "rollup": "^2.73.0",
-    "rollup-plugin-terser": "^7.0.2"
+    "@types/node": "^26.6.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "acorn": "^8.19.0",
+    "minista": "^5.1.2",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "terser": "^5.51.2",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.5"
   }
 }

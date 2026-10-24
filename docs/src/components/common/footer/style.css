@@ -1,0 +1,19 @@
+.footer {
+  padding: 7.5vh 20px;
+}
+
+.footer a {
+  color: var(--theme-lk-1);
+  text-decoration: underline;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .footer a:hover {
+    text-decoration: none;
+  }
+}
+
+.footer-copyright {
+  font-family: var(--theme-font-sans-en);
+  text-align: center;
+}

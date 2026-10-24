@@ -1,0 +1,111 @@
+:root {
+  --theme-font-sans:
+    "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans Japanese", Meiryo,
+    "Yu Gothic Medium", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+  --theme-font-sans-en:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, sans-serif;
+  --theme-font-mono:
+    Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", Meiryo,
+    monospace, serif;
+  --theme-site-width: 1140px;
+  --theme-card-width: 820px;
+}
+
+:root {
+  --theme-tx-1: #1a1a1a;
+  --theme-tx-2: #4d4c4c;
+  --theme-tx-3: #6f6f6f;
+  --theme-bg-1: #ffffff;
+  --theme-bg-2: #f2f2f2;
+  --theme-bg-3: #e4e4e4;
+  --theme-lk-1: #00a6dd;
+  --theme-lk-2: #0093c4;
+  --theme-lk-tx: #ffffff;
+  --theme-ac-1: #334750;
+}
+
+/*@media (prefers-color-scheme: dark) {
+  :root {
+    --theme-tx-1: #ffffff;
+    --theme-tx-2: #eeeeee;
+    --theme-tx-3: #9e9e9e;
+    --theme-bg-1: #191919;
+    --theme-bg-2: #222222;
+    --theme-bg-3: #333333;
+    --theme-lk-1: #00a6dd;
+    --theme-lk-2: #0093c4;
+    --theme-lk-tx: #ffffff;
+    --theme-ac-1: #334750;
+  }
+}*/
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+html {
+  font-family: var(--theme-font-sans);
+  word-break: break-word;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background: var(--theme-bg-1);
+  color: var(--theme-tx-2);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+a {
+  color: var(--theme-lk-1);
+  text-decoration: underline;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+:not(pre) > code {
+  padding: 0.2rem 0.5rem;
+  background-color: var(--theme-ac-1);
+  border-radius: 3px;
+  color: var(--theme-lk-tx);
+  font-size: 0.875em;
+  font-family: var(--theme-font-mono);
+  word-break: keep-all;
+}
+
+table {
+  width: 100%;
+  border: 2px solid var(--theme-tx-3);
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+table th,
+table td {
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--theme-tx-3);
+  vertical-align: top;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+svg {
+  display: block;
+  max-width: 100%;
+}

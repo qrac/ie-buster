@@ -1,0 +1,13 @@
+{
+  "name": "ie-buster-docs",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "ie-buster": "*"
+  },
+  "devDependencies": {
+    "rehype-pretty-code": "^0.14.5",
+    "remark-gfm": "^4.0.1",
+    "shiki": "^4.5.0"
+  }
+}

@@ -1,0 +1,38 @@
+.hero {
+  padding: 10vh 20px;
+}
+
+.hero .svg-logo-icon {
+  display: block;
+  width: 60vw;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.hero .svg-logo-text {
+  display: block;
+  width: 80vw;
+  max-width: 500px;
+  margin: 0.5rem auto 0;
+}
+
+.hero-ribbon {
+  display: block;
+  width: 80vw;
+  max-width: 500px;
+  margin: 1rem auto 0;
+  padding: 0.375em 1em;
+  background-color: var(--theme-ac-1);
+  border-radius: 3.75px;
+  color: var(--theme-lk-tx);
+  font-size: 1rem;
+  font-weight: 700;
+  word-break: auto-phrase;
+  text-align: center;
+}
+
+.hero-note {
+  margin-top: 1rem;
+  text-align: center;
+  font-family: var(--theme-font-sans-en);
+}
